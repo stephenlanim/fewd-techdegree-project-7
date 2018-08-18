@@ -1,0 +1,18 @@
+/* ======================================
+    Base Styles
+   ====================================== */
+
+* {
+  box-sizing: border-box;
+  font-family: $font-stack;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}

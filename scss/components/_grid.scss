@@ -1,0 +1,47 @@
+/* ======================================
+    Grid Styles
+   ====================================== */
+.container,
+.grid__row {
+  @include center;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+}
+
+
+.centered {
+  @include center;
+}
+
+@include mq("sm"){
+  .grid__row {
+    @include flexbox;
+  }
+}
+
+// Loop for creating and styling 12 columns
+@for $i from 1 through 12 {
+  .grid__col--#{$i} {
+    // Tablet portrait and larger
+    @include mq("sm") {
+      @include flexbox;
+      // Create and style each column width
+      width: grid-maker($i, 12);
+    }
+  }
+  // Create space between more than one column on the same line
+  .grid__col--#{$i}:nth-child(n + 2) {
+    @include mq("sm") {
+      margin-left: 1em;
+    }
+  }
+}
+
+.theme__colors.grid__col- {
+  @include grid-examples($column-colors);
+}

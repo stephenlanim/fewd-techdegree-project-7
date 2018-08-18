@@ -1,0 +1,42 @@
+// ======================================
+//  Variables
+// ======================================
+
+// Fonts
+$font-stack: "Helvetica Neue", sans-serif;
+
+// Breakpoints (Sass map)
+$breakpoints: (
+  "xs": 768px, // smartphone width (normally 599px)
+  "sm": 769px, // tablet portrait (normally 600px)
+  "med": 900px, // tablet landscape
+  "lg": 1200px, // desktop
+);
+
+// Colors
+$text-color: #555;
+$color-primary: #58e1c1;
+$color-secondary: #51ddfc;
+
+// Button Colors (Sass map)
+$btn-colors: (
+"default": #51ddfc,
+"success": #63cc82,
+"error": #e4757a,
+"warning": #fd7856,
+"info": #927bc1,
+);
+
+// Grid Column Colors (Sass map)
+$column-colors: (
+"12": #80e8d1,
+"8": #fd9f85,
+"7": #ec9fa3,
+"6": #3fabca,
+"5": #88d9a0,
+"4": #7ee6fd,
+"3": #deb2ee,
+);
+
+//Transitions
+$cub-bez: cubic-bezier(.5,-0.5,.5,1.5);

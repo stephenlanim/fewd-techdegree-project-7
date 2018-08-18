@@ -1,0 +1,51 @@
+// ======================================
+//  Placeholders
+// ======================================
+
+// Nav Items
+%nav-item {
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-primary;
+  }
+}
+
+// Links
+%link {
+  color: $color-secondary;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+// Images
+%img {
+  display: block;
+  padding: 1em;
+}
+
+// Headlines
+%hdln-1 {
+  color: $color-primary;
+  font-weight: bolder;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+%hdln-2 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 1em;
+}

@@ -1,0 +1,23 @@
+/* ======================================
+    Typography Styles
+   ====================================== */
+.headline--primary {
+  @extend %hdln-1;
+}
+
+.headline--secondary {
+  @extend %hdln-2;
+}
+
+.link {
+  @extend %link;
+}
+
+.blockquote {
+  border-left: 8px solid $color-primary;
+  border-radius: 5px;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 400;
+  padding-left: 1em;
+}
