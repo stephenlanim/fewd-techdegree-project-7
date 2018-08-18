@@ -3,7 +3,7 @@
 // ======================================
 
 // Fonts
-$font-stack: "Helvetica Neue", sans-serif;
+$font-stack: "Nunito", sans-serif;
 
 // Breakpoints (Sass map)
 $breakpoints: (
@@ -15,8 +15,15 @@ $breakpoints: (
 
 // Colors
 $text-color: #555;
-$color-primary: #58e1c1;
-$color-secondary: #51ddfc;
+$color-primary: #7477bf;
+$color-secondary: #81c98f;
+$color-tertiary: #74b1bf;
+$color-accent: #4d4c72;
+$nav-icon-color: #a6a6b9;
+$link-color-active: #85db80;
+$background-color: #fbfbfb;
+$btn-color-default: #7377bf;
+$btn-color-cancel: #b2b2b2;
 
 // Button Colors (Sass map)
 $btn-colors: (
