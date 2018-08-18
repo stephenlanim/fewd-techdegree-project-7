@@ -2,7 +2,7 @@
     Dashboard
    ====================================== */
 // Variables
-const pageURL = window.location.href.toLowerCase();
+const pageURL = window.location.href;
 // const $navURL = $(this).attr('href');
 
 // Make nav link active
@@ -28,23 +28,24 @@ const pageURL = window.location.href.toLowerCase();
 //
 // });
 
-if (pageURL.includes('index.html')) {
-  // $('.nav_item').addClass('active');
-  console.log("It's in there.");
-}
+// if (pageURL.includes('index.html') || pageURL.includes('64157')) {
+//   // $('.nav_item').addClass('active');
+//   console.log("It's in there.");
+// }
 
-// // Loop through each nav item
-// $('.nav__item').each( function (index, navURL) {
-//   const $navURL = $(this).attr('href').toLowerCase();
-//
-// // If nav link URL matches current page URL...
-//   if (pageURL.includes($navURL)) {
-//     // add class "active" to nav link
-//     $(this).addClass('active');
-//   }
-//   // else remove "active" class from nav link
-//   else {
-//     $(this).removeClass('active');
-//   }
-//
-// });
+
+// Loop through each nav item
+$('.nav__item').each( function (index, navURL) {
+  const $navURL = $(this).attr('href').toLowerCase();
+
+// If nav link URL matches current page URL...
+  if (pageURL.includes($navURL)) {
+    // add class "active" to nav link
+    $(this).addClass('active');
+  }
+  // else remove "active" class from nav link
+  else {
+    $(this).removeClass('active');
+  }
+
+});
