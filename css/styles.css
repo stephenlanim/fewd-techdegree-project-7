@@ -523,6 +523,63 @@ p {
   margin-bottom: 1em; }
 
 /* ======================================
+    Header Styles
+   ====================================== */
+.header {
+  background-color: #7477bf;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row; }
+
+.app-name {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  font-size: 2em;
+  margin: 1em;
+  margin-top: auto;
+  margin-bottom: auto; }
+  @media (max-width: 768px) {
+    .app-name {
+      font-size: 1.5em;
+      margin-right: 0; } }
+
+.app-login {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  font-size: 2em;
+  padding: 1em;
+  margin-left: auto; }
+  @media (max-width: 768px) {
+    .app-login {
+      font-size: 1.5em; } }
+
+.notifications {
+  fill: #fff;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1em; }
+
+.avatar-div {
+  border-left: 2px solid #4d4c72;
+  padding-left: 1em; }
+
+.avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto; }
+
+.user-name {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5em; }
+
+/* ======================================
     Navigation Styles
    ====================================== */
 .nav-icon {
@@ -533,34 +590,43 @@ p {
   margin-right: auto; }
 
 .nav {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   background-color: #4d4c72;
-  width: 60px;
-  height: 100vh; }
-  @media (min-width: 769px) {
+  width: fit-content;
+  width: -moz-fit-content;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+  @media (max-width: 768px) {
     .nav {
       display: flex;
-      flex-direction: row; } }
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: fit-content;
+      height: -moz-fit-content;
+      width: 100%; } }
 
-.nav__item {
+.nav-item {
   height: fit-content;
   height: -moz-fit-content;
+  padding: 1.8em;
   transition-property: all;
   transition-duration: 0.1s;
   transition-timing-function: ease-in; }
-  .nav__item.active {
-    border-left: 2px solid #85db80; }
-  .nav__item a {
-    color: #555;
-    display: block;
-    font-weight: 200;
-    text-decoration: none; }
-  .nav__item:active a,
-  .nav__item:focus a,
-  .nav__item:hover a {
-    color: #fff; }
+  @media (max-width: 768px) {
+    .nav-item {
+      padding: 0.5em; } }
+  .nav-item.active {
+    border-left: 3px solid #85db80; }
+    .nav-item.active .nav-icon {
+      fill: #fff; }
+    @media (max-width: 768px) {
+      .nav-item.active {
+        border-left: none;
+        border-bottom: 3px solid #85db80; } }
+  .nav-item:hover .nav-icon,
+  .nav-item:focus .nav-icon,
+  .nav-item:active .nav-icon {
+    fill: #fff; }
 
 /* ======================================
     Typography Styles
