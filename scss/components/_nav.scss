@@ -5,10 +5,6 @@
   fill: $nav-icon-color;
 }
 
-[role="navigation"] {
-  @include center;
-}
-
 .nav {
   background-color: $color-accent;
   width: fit-content;
@@ -30,9 +26,7 @@
   height: -moz-fit-content;
   padding: 1.8em;
 
-  // @extend %nav-item;
   @include transition($dur:0.1s);
-
 
   @include mq("xs") {
     padding: 0.5em;

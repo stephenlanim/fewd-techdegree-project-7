@@ -339,6 +339,9 @@ p {
 /* ======================================
     Grid Styles
    ====================================== */
+.grid {
+  display: grid; }
+
 .container,
 .grid__row {
   margin-left: auto;
@@ -584,10 +587,6 @@ p {
    ====================================== */
 .nav-icon {
   fill: #a6a6b9; }
-
-[role="navigation"] {
-  margin-left: auto;
-  margin-right: auto; }
 
 .nav {
   background-color: #4d4c72;

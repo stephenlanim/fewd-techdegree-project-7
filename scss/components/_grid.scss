@@ -1,6 +1,10 @@
 /* ======================================
     Grid Styles
    ====================================== */
+.grid {
+  display: grid;
+}
+
 .container,
 .grid__row {
   @include center;
