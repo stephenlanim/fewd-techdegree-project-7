@@ -3,19 +3,142 @@
    ====================================== */
 .grid {
   display: grid;
+  grid-template-columns: 108px 1fr;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  @include mq("xs") {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main";
+  }
 }
 
-.container,
-.grid__row {
-  @include center;
-  padding: 0;
-  margin-bottom: 2em;
+.dashboard {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 1fr;
+  // grid-auto-columns: 1fr;
+  // grid-auto-rows: 50px;
+  grid-template-areas:
+    "topper topper"
+    "widgets widgets";
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
+.topper {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100px;
+  grid-template-areas:
+    "db-heading search";
 }
+
+.header {
+  grid-area: header;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+// Topper Section
+
+.topper {
+  grid-area: topper;
+}
+
+.db-heading {
+  grid-area: db-heading;
+  border-right: $border-line;
+
+  & h1 {
+    @include center;
+  }
+}
+
+.search {
+  background-color: $background-color;
+  border-bottom: $border-line;
+  display: flex;
+  flex-direction: row;
+  padding: 0.75em;
+}
+
+#search {
+  grid-area: search;
+  border: $border-line;
+  border-radius: 5px;
+  font-size: 1.25em;
+  margin-left: auto;
+  margin-right: 1em;
+  padding: 0.5em;
+  width: 40%;
+}
+
+// Widgets Section
+
+.widgets {
+  grid-area: widgets;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 100px 100px 100px 100px; //To be modified for widget sizes
+  grid-template-areas:
+    "traffic traffic"
+    "daily-traffic mobile-users"
+    "social-stats social-stats"
+    "new-members recent-activity"
+    "message-user settings";
+}
+
+.traffic {
+  grid-area: traffic;
+}
+
+.daily-traffic {
+  grid-area: daily-traffic;
+}
+
+.mobile-users {
+  grid-area: mobile-users;
+}
+
+.social-stats {
+  grid-area: social-stats;
+}
+
+.new-members {
+  grid-area: new-members;
+}
+
+.recent-activity {
+  grid-area: recent-activity;
+}
+
+.message-user {
+  grid-area: message-user;
+}
+
+.settings {
+  grid-area: settings;
+}
+
+// .container,
+// .grid__row {
+//   @include center;
+//   padding: 0;
+//   margin-bottom: 2em;
+// }
+
+// .container {
+//   width: 90%;
+//   max-width: 1200px;
+// }
 
 
 .centered {

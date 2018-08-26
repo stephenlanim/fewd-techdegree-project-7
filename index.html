@@ -7,75 +7,119 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header class="header">
-      <div class="app-name">
-        <span><strong>Your</strong>App&trade;</span>
-      </div>
+    <div class="grid">
+      <header class="header">
+        <div class="app-name">
+          <span><strong>Your</strong>App&trade;</span>
+        </div>
 
-      <div class="app-login">
-        <!-- <span> -->
-          <svg class="notifications" width="50" height="50">
-            <use xlink:href="icons/icon-bell.svg#icon-bell" />
+        <div class="app-login">
+          <!-- <span> -->
+            <svg class="notifications" width="50" height="50">
+              <use xlink:href="icons/icon-bell.svg#icon-bell" />
+            </svg>
+
+            <div class="avatar-div">
+              <img class="avatar" src="images/myAvatar.png" alt="USer avatar.">
+            </div>
+
+            <span class="user-name">User Name</span>
+          <!-- </span> -->
+        </div>
+      </header>
+
+      <nav class="nav">
+        <!-- Dashboard -->
+        <a class="nav-item" href="index.html">
+          <svg class="nav-icon" width="50" height="50">
+            <use xlink:href="icons/icon-dashboard.svg#icon-dashboard" />
           </svg>
+        </a>
+        <!-- Members -->
+        <a class="nav-item" href="members.html">
+          <svg class="nav-icon" width="50" height="50">
+            <use xlink:href="icons/icon-members.svg#icon-members" />
+          </svg>
+        </a>
+        <!-- Visits -->
+        <a class="nav-item" href="visits.html">
+          <svg class="nav-icon" width="50" height="50">
+            <use xlink:href="icons/icon-visits.svg#icon-visits" />
+          </svg>
+        </a>
+        <!-- Settings -->
+        <a class="nav-item" href="settings.html">
+          <svg class="nav-icon" width="50" height="50">
+            <use xlink:href="icons/icon-settings.svg#icon-settings" />
+          </svg>
+        </a>
+      </nav>
 
-          <div class="avatar-div">
-            <img class="avatar" src="images/myAvatar.png" alt="USer avatar.">
+      <main class="dashboard">
+
+        <div class="topper">
+          <div class="db-heading">
+            <h1>Dashboard</h1>
           </div>
 
-          <span class="user-name">User Name</span>
-        <!-- </span> -->
+          <div class="search">
+            <input id="search" type="search" name="user_search" placeholder="Search">
+          </div>
+        </div>
+
+        <div class="widgets">
+          <div class="traffic">
+            <h2>Traffic</h2>
+          </div>
+
+          <div class="daily-traffic">
+            <h2>Daily Traffic</h2>
+          </div>
+
+          <div class="mobile-users">
+            <h2>Mobile Users</h2>
+          </div>
+
+          <div class="social-stats">
+            <h2>Social Stats</h2>
+          </div>
+
+          <div class="new-members">
+            <h2>New Members</h2>
+          </div>
+
+          <div class="recent-activity">
+            <h2>Recent Activity</h2>
+          </div>
+
+          <div class="message-user">
+            <h2>Message User</h2>
+          </div>
+
+          <div class="settings">
+            <h2>Settings</h2>
+          </div>
+
+
+
+
+
+
+          <!-- <svg width="50" height="50">
+            <use xlink:href="icons/icon-facebook.svg#icon-facebook" />
+          </svg>
+
+          <svg width="50" height="50">
+            <use xlink:href="icons/icon-google-plus.svg#icon-google-plus" />
+          </svg>
+
+          <svg width="50" height="50">
+            <use xlink:href="icons/icon-twitter.svg#icon-twitter" />
+          </svg> -->
+        </div>
+
+      </main>
       </div>
-    </header>
-
-    <nav class="nav">
-      <!-- Dashboard -->
-      <a class="nav-item" href="index.html">
-        <svg class="nav-icon" width="50" height="50">
-          <use xlink:href="icons/icon-dashboard.svg#icon-dashboard" />
-        </svg>
-      </a>
-      <!-- Members -->
-      <a class="nav-item" href="members.html">
-        <svg class="nav-icon" width="50" height="50">
-          <use xlink:href="icons/icon-members.svg#icon-members" />
-        </svg>
-      </a>
-      <!-- Visits -->
-      <a class="nav-item" href="visits.html">
-        <svg class="nav-icon" width="50" height="50">
-          <use xlink:href="icons/icon-visits.svg#icon-visits" />
-        </svg>
-      </a>
-      <!-- Settings -->
-      <a class="nav-item" href="settings.html">
-        <svg class="nav-icon" width="50" height="50">
-          <use xlink:href="icons/icon-settings.svg#icon-settings" />
-        </svg>
-      </a>
-    </nav>
-
-    <main class="grid">
-
-
-
-
-
-
-
-      <!-- <svg width="50" height="50">
-        <use xlink:href="icons/icon-facebook.svg#icon-facebook" />
-      </svg>
-
-      <svg width="50" height="50">
-        <use xlink:href="icons/icon-google-plus.svg#icon-google-plus" />
-      </svg>
-
-      <svg width="50" height="50">
-        <use xlink:href="icons/icon-twitter.svg#icon-twitter" />
-      </svg> -->
-
-    </main>
-
 
     <!-- ==============================
      Scripts

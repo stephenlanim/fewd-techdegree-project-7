@@ -340,22 +340,98 @@ p {
     Grid Styles
    ====================================== */
 .grid {
-  display: grid; }
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  grid-template-areas: "header header" "nav main"; }
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-areas: "header" "nav" "main"; } }
 
-.container,
-.grid__row {
+.dashboard {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: "topper topper" "widgets widgets"; }
+
+.topper {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100px;
+  grid-template-areas: "db-heading search"; }
+
+.header {
+  grid-area: header; }
+
+.nav {
+  grid-area: nav; }
+
+main {
+  grid-area: main; }
+
+.topper {
+  grid-area: topper; }
+
+.db-heading {
+  grid-area: db-heading;
+  border-right: 2px solid #c8c8c8; }
+  .db-heading h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+
+.search {
+  background-color: #fbfbfb;
+  border-bottom: 2px solid #c8c8c8;
+  display: flex;
+  flex-direction: row;
+  padding: 0.75em; }
+
+#search {
+  grid-area: search;
+  border: 2px solid #c8c8c8;
+  border-radius: 5px;
+  font-size: 1.25em;
   margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  margin-bottom: 2em; }
+  margin-right: 1em;
+  padding: 0.5em;
+  width: 40%; }
 
-.container {
-  width: 90%;
-  max-width: 1200px; }
+.widgets {
+  grid-area: widgets;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-areas: "traffic traffic" "daily-traffic mobile-users" "social-stats social-stats" "new-members recent-activity" "message-user settings"; }
+
+.traffic {
+  grid-area: traffic; }
+
+.daily-traffic {
+  grid-area: daily-traffic; }
+
+.mobile-users {
+  grid-area: mobile-users; }
+
+.social-stats {
+  grid-area: social-stats; }
+
+.new-members {
+  grid-area: new-members; }
+
+.recent-activity {
+  grid-area: recent-activity; }
+
+.message-user {
+  grid-area: message-user; }
+
+.settings {
+  grid-area: settings; }
 
 .centered {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  text-align: center; }
 
 @media (min-width: 769px) {
   .grid__row {
@@ -644,6 +720,7 @@ p {
 .form {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   width: 80%; }
   @media (min-width: 769px) {
     .form {
@@ -658,7 +735,8 @@ p {
     padding: 1em;
     width: 90%;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    text-align: center; }
   .form .btn--default[type="submit"] {
     margin-left: 0;
     margin-right: 0;
@@ -670,6 +748,7 @@ p {
 .img--logo {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   width: 50%; }
   @media (min-width: 769px) {
     .img--logo {
@@ -679,11 +758,13 @@ p {
   border: 1px solid #ccc;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   max-width: 100%; }
 
 .img--avatar {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   max-width: 100%; }
 
 /* ======================================
@@ -798,5 +879,11 @@ p {
     .theme__colors.btn--info {
       margin: 1em;
       width: 20%; } }
+
+/* ======================================
+    Widgets Styles
+   ====================================== */
+h2 {
+  text-transform: uppercase; }
 
 /*# sourceMappingURL=styles.css.map */
