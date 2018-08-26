@@ -5,3 +5,45 @@
 h2 {
   text-transform: uppercase;
 }
+
+.widgets > div {
+  padding: 1em;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  // width: 80vw;
+  // height: 40vh;
+}
+
+.daily-traffic,
+.new-members,
+.message-user {
+  border-top: $border-line;
+  border-right: $border-line;
+}
+
+.mobile-users,
+.recent-activity,
+.social-stats,
+.settings {
+  border-top: $border-line;
+}
+
+#trafficChart {
+  // display: block;
+  // width: 600px;
+  // height: 300px;
+}
+
+canvas {
+  border: 1px dotted red;
+}
+
+// .chart-container {
+//   position: relative;
+//   margin: auto;
+//   height: 80vh;
+//   width: 60vw;
+// }

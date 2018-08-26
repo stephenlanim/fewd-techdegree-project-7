@@ -87,7 +87,7 @@ main {
   grid-area: widgets;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 100px 100px 100px 100px 100px; //To be modified for widget sizes
+  grid-template-rows: auto auto auto auto auto; //To be modified for widget sizes
   grid-template-areas:
     "traffic traffic"
     "daily-traffic mobile-users"

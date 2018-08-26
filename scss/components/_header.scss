@@ -9,6 +9,7 @@
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  z-index: 10000;
   @include flexbox($dir:row);
   & * {
     // @include center-vertical;
@@ -38,7 +39,7 @@
   font-size: 2em;
   padding: 1em;
   margin-left: auto;
-  
+
   @include mq('xs') {
     font-size: 1.5em;
   }

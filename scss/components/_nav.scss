@@ -9,7 +9,7 @@
   background-color: $color-accent;
   width: fit-content;
   width: -moz-fit-content;
-  height: 100vh;
+  height: auto;
   @include flexbox($dir:column);
 
   @include mq("xs") {
