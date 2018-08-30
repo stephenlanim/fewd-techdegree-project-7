@@ -6,29 +6,19 @@
 
 var $trafficCanvas = $('canvas#trafficChart');
 var trafficLineChart = new Chart($trafficCanvas, {
-   type: 'bar',
+   type: 'line',
    data: {
        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
        datasets: [{
            label: '# of Votes',
            data: [12, 19, 3, 5, 2, 3],
-           backgroundColor: [
-               'rgba(255, 99, 132, 0.2)',
-               'rgba(54, 162, 235, 0.2)',
-               'rgba(255, 206, 86, 0.2)',
-               'rgba(75, 192, 192, 0.2)',
-               'rgba(153, 102, 255, 0.2)',
-               'rgba(255, 159, 64, 0.2)'
-           ],
-           borderColor: [
-               'rgba(255,99,132,1)',
-               'rgba(54, 162, 235, 1)',
-               'rgba(255, 206, 86, 1)',
-               'rgba(75, 192, 192, 1)',
-               'rgba(153, 102, 255, 1)',
-               'rgba(255, 159, 64, 1)'
-           ],
-           borderWidth: 1
+           backgroundColor: 'rgba(116, 119, 191, 0.4)',
+           borderColor: 'rgb(116, 119, 191)',
+           borderWidth: 1,
+           pointRadius: 6,
+           pointBackgroundColor: '#fff',
+           pointBorderWidth: 2,
+           pointBorderColor: '#7477bf'
        }]
    },
    options: {
@@ -53,26 +43,13 @@ var $dailyTrafficCanvas = $('canvas#dailyTrafficChart');
 var dailyTrafficBarChart = new Chart($dailyTrafficCanvas, {
    type: 'bar',
    data: {
-       labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+       labels: ["S", "M", "T", "W", "T", "F", "S"],
        datasets: [{
            label: '# of Votes',
-           data: [12, 19, 3, 5, 2, 3],
-           backgroundColor: [
-               'rgba(255, 99, 132, 0.2)',
-               'rgba(54, 162, 235, 0.2)',
-               'rgba(255, 206, 86, 0.2)',
-               'rgba(75, 192, 192, 0.2)',
-               'rgba(153, 102, 255, 0.2)',
-               'rgba(255, 159, 64, 0.2)'
-           ],
-           borderColor: [
-               'rgba(255,99,132,1)',
-               'rgba(54, 162, 235, 1)',
-               'rgba(255, 206, 86, 1)',
-               'rgba(75, 192, 192, 1)',
-               'rgba(153, 102, 255, 1)',
-               'rgba(255, 159, 64, 1)'
-           ],
+           data: [50, 75, 150, 100, 200, 175, 75],
+           // categoryPercentage: 0.4,
+           backgroundColor: 'rgb(116, 119, 191)',
+           borderRadius: 10,
            borderWidth: 1
        }]
    },
@@ -84,57 +61,50 @@ var dailyTrafficBarChart = new Chart($dailyTrafficCanvas, {
                    beginAtZero:true
                }
            }]
+       },
+       legend: {
+         display: false
        }
    },
    responsive: true
 });
 
-$dailyTrafficCanvas.parent().css({'width': '80%','height': '70%'});
+$dailyTrafficCanvas.parent().css({'width': '80%','height': '40vh'});
 
 
 /* ===== Mobile Users Chart ===== */
 
 var $mobileUsersCanvas = $('canvas#mobileUsersChart');
 var mobileUserDonutChart = new Chart($mobileUsersCanvas, {
-   type: 'bar',
+   type: 'doughnut',
    data: {
-       labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+       labels: ["Photos", "Tablets", "Desktop"],
        datasets: [{
            label: '# of Votes',
-           data: [12, 19, 3, 5, 2, 3],
+           data: [15, 20, 65],
            backgroundColor: [
-               'rgba(255, 99, 132, 0.2)',
-               'rgba(54, 162, 235, 0.2)',
-               'rgba(255, 206, 86, 0.2)',
-               'rgba(75, 192, 192, 0.2)',
-               'rgba(153, 102, 255, 0.2)',
-               'rgba(255, 159, 64, 0.2)'
+               '#74b1bf',
+               '#81c98f',
+               '#7477bf'
            ],
-           borderColor: [
-               'rgba(255,99,132,1)',
-               'rgba(54, 162, 235, 1)',
-               'rgba(255, 206, 86, 1)',
-               'rgba(75, 192, 192, 1)',
-               'rgba(153, 102, 255, 1)',
-               'rgba(255, 159, 64, 1)'
-           ],
-           borderWidth: 1
+           borderWidth: 0
        }]
    },
    options: {
        maintainAspectRatio: false,
        scales: {
            yAxes: [{
-               ticks: {
-                   beginAtZero:true
-               }
+               display: false
            }]
+       },
+       legend: {
+         position: 'right'
        }
    },
    responsive: true
 });
 
-$mobileUsersCanvas.parent().css({'width': '80%','height': '70%'});
+$mobileUsersCanvas.parent().css({'width': '80%','height': '40vh'});
 
 // Sample 2
 
