@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>WebApp Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/toggle-switch.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -249,16 +250,30 @@
 
           <div class="message-user">
             <h2>Message User</h2>
+            <form action="index.html">
+              <input id="searchUser" type="search" name="search_for_user" placeholder="Search for User">
+
+              <textarea name="messageUser" rows="8" cols="80" placeholder="Message for User"></textarea>
+              <button class="submit-btn" type="submit">Send</button>
+            </form>
           </div>
 
           <div class="settings">
             <h2>Settings</h2>
+            <form action="index.html">
+              <label for="">Send Email Notification</label>
+              <input type="">
+
+              <label for="">Set Profile to Public</label>
+              <input type="">
+
+              <select id="timezone" name="user_timezone">
+                <option value="none" selected>Select Timezone</option>
+              </select>
+              <button class="submit-btn">Save</button>
+              <button class="cancel-btn">Cancel</button>
+            </form>
           </div>
-
-
-
-
-
 
 
         </div>

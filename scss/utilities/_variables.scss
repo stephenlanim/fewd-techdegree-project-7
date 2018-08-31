@@ -25,6 +25,7 @@ $background-color: #fbfbfb;
 $border-color: darken($background-color, 20);
 $btn-color-default: #7377bf;
 $btn-color-cancel: #b2b2b2;
+$form-color: lighten($border-color, 20);
 
 // Border
 $border-line: 2px solid $border-color;

@@ -25,3 +25,38 @@
     width: 100%;
   }
 }
+
+form input,
+form select,
+form textarea {
+  background-color: $form-color;
+  border: none;
+  border: $border-line;
+  border-radius: 5px;
+  padding: 1em;
+
+  &:hover {
+    border-color: $color-secondary;
+  }
+  &:focus,
+  &active {
+    border-color: $color-primary;
+  }
+}
+
+.message-user {
+
+  & textarea {
+    resize: none;
+    width: 100%;
+  }
+}
+
+.settings {
+
+  & select {
+    display: block;
+    width: 100%;
+  }
+
+}

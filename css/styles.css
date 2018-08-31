@@ -772,6 +772,33 @@ main {
     margin-right: 0;
     width: 100%; }
 
+form input,
+form select,
+form textarea {
+  background-color: #fbfbfb;
+  border: none;
+  border: 2px solid #c8c8c8;
+  border-radius: 5px;
+  padding: 1em; }
+  form input:hover,
+  form select:hover,
+  form textarea:hover {
+    border-color: #81c98f; }
+  form input:focus, form inputactive,
+  form select:focus,
+  form selectactive,
+  form textarea:focus,
+  form textareaactive {
+    border-color: #7477bf; }
+
+.message-user textarea {
+  resize: none;
+  width: 100%; }
+
+.settings select {
+  display: block;
+  width: 100%; }
+
 /* ======================================
     Image Styles
    ====================================== */
@@ -800,115 +827,30 @@ main {
 /* ======================================
     Buttons Styles
    ====================================== */
-.theme__colors.btn--default {
-  background-color: #51ddfc;
-  border: 0;
-  border-radius: 5px;
+button {
   color: #fff;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 0.75em;
-  text-align: center;
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
   text-transform: uppercase;
-  margin: 0.5em;
-  width: 100%;
   transition-property: all;
-  transition-duration: 0.15s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in; }
-  .theme__colors.btn--default:hover, .theme__colors.btn--default:focus {
-    background-color: #06cefb; }
-  @media (min-width: 600px) {
-    .theme__colors.btn--default {
-      margin: 1em;
-      width: 20%; } }
+  .message-user button {
+    width: 100%; }
+  .settings button {
+    width: 40%; }
 
-.theme__colors.btn--success {
-  background-color: #63cc82;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 0.75em;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0.5em;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in; }
-  .theme__colors.btn--success:hover, .theme__colors.btn--success:focus {
-    background-color: #38ab5a; }
-  @media (min-width: 600px) {
-    .theme__colors.btn--success {
-      margin: 1em;
-      width: 20%; } }
+.submit-btn {
+  background-color: #7377bf; }
+  .submit-btn:hover, .submit-btn:focus {
+    background-color: #40448c; }
 
-.theme__colors.btn--error {
-  background-color: #e4757a;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 0.75em;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0.5em;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in; }
-  .theme__colors.btn--error:hover, .theme__colors.btn--error:focus {
-    background-color: #d7353c; }
-  @media (min-width: 600px) {
-    .theme__colors.btn--error {
-      margin: 1em;
-      width: 20%; } }
-
-.theme__colors.btn--warning {
-  background-color: #fd7856;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 0.75em;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0.5em;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in; }
-  .theme__colors.btn--warning:hover, .theme__colors.btn--warning:focus {
-    background-color: #fc3c0a; }
-  @media (min-width: 600px) {
-    .theme__colors.btn--warning {
-      margin: 1em;
-      width: 20%; } }
-
-.theme__colors.btn--info {
-  background-color: #927bc1;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 0.75em;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0.5em;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in; }
-  .theme__colors.btn--info:hover, .theme__colors.btn--info:focus {
-    background-color: #694da3; }
-  @media (min-width: 600px) {
-    .theme__colors.btn--info {
-      margin: 1em;
-      width: 20%; } }
+.cancel-btn {
+  background-color: #b2b2b2; }
+  .cancel-btn:hover, .cancel-btn:focus {
+    background-color: #7f7f7f; }
 
 /* ======================================
     Widgets Styles
@@ -918,6 +860,9 @@ h2 {
 
 .widgets > div {
   padding: 1em; }
+  @media (max-width: 599px) {
+    .widgets > div {
+      border-right: none; } }
 
 .chart-container {
   position: relative;

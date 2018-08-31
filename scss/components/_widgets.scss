@@ -8,6 +8,9 @@ h2 {
 
 .widgets > div {
   padding: 1em;
+  @include mq("xs") {
+    border-right: none;
+  }
 }
 
 .chart-container {
