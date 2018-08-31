@@ -16,6 +16,8 @@ This project involved:
 - jQuery UI animations, and
 - refactoring code. -->
 
+The media query breakpoints used in this project follow the recommendations in the Free Code Camp article “The 100% correct way to do CSS breakpoints” found at: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862.
+
 - Site was tested in Chrome for Mac, Firefox for Mac, and Apple Safari.
 - HTML validated via the W3C Markup Validation Service.
 - CSS validated via the W3C CSS Validation Service.

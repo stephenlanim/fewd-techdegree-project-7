@@ -87,7 +87,7 @@ canvas {
     margin: 0.2em;
   }
   & p {
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: lighter;
     margin: 0.2em;
   }
@@ -109,4 +109,12 @@ canvas {
   width: 100%;
   height: 85%;
   // height: auto;
+}
+
+.new-members {
+
+}
+
+.member {
+  @include flexbox($dir: row, $just: space-between);
 }
