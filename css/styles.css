@@ -989,6 +989,37 @@ h2 {
 .member {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 1em; }
+  .member:last-child {
+    border-bottom: none; }
+  .member img {
+    border-radius: 50%;
+    margin-right: 1em;
+    width: 10%;
+    height: 50%; }
+  .member .member-info,
+  .member .activity-info {
+    width: 70%; }
+  .member p {
+    margin-top: 0.5em; }
+  .member a {
+    text-decoration: none;
+    color: #7477bf; }
+    .member a:hover, .member afocus {
+      color: #81c98f; }
+  .member .angle-bracket {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 0.4em; }
+  .member :last-child {
+    margin-left: auto; }
+  @media (min-width: 900px) {
+    .new-members .member {
+      flex-direction: column; } }
+  @media (min-width: 1200px) {
+    .new-members .member {
+      flex-direction: row; } }
 
 /*# sourceMappingURL=styles.css.map */
