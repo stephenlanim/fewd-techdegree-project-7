@@ -4,29 +4,20 @@
 
 .header {
   background-color: $color-primary;
-  // height: fit-content;
-  // height: -moz-fit-content;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   z-index: 10000;
   @include flexbox($dir:row);
-  & * {
-    // @include center-vertical;
-  }
-  & div {
-    // @include center-vertical;
-  }
+  align-items: center;
 }
 
 .app-name {
   @include flexbox($dir:row);
+  align-items: center;
   color: #fff;
   font-size: 2em;
-  // line-height: 1.0;
-  // padding: 1em;
   margin: 1em;
-  @include center-vertical;
   @include mq('xs') {
     font-size: 1.5em;
     margin-right: 0;
@@ -35,6 +26,7 @@
 
 .app-login {
   @include flexbox($dir:row);
+  align-items: center;
   color: #fff;
   font-size: 2em;
   padding: 1em;
@@ -46,9 +38,13 @@
 }
 
 .notifications {
-  fill: #fff;
-  @include center-vertical;
+  // @include center-vertical;
   margin-right: 1em;
+  position: relative;
+}
+
+.bell {
+  fill: #fff;
 
   &:hover,
   &:focus {
@@ -56,6 +52,18 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
   }
+}
+
+.new-notif {
+  content: '';
+  background-color: $color-secondary;
+  border: 2px solid $color-secondary;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+
+  position: absolute;
+  right: 0;
 }
 
 .avatar-div {
@@ -67,10 +75,8 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  @include center-vertical;
 }
 
 .user-name {
-  @include center-vertical;
   margin-left: 0.5em;
 }
