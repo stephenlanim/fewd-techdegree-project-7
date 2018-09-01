@@ -40,16 +40,6 @@
 		"oAP": "\/css\/styles.css.map",
 		"oF": 0
 		},
-	"\/css\/toggle-switch.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/toggle-switch-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/dashboard.png": {
 		"ft": 32768,
 		"iS": 205601,

@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>WebApp Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/toggle-switch.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -261,11 +260,28 @@
           <div class="settings">
             <h2>Settings</h2>
             <form action="index.html">
-              <label for="">Send Email Notification</label>
-              <input type="">
+              
+              <div class="switch-n-label">
+                <label for="">Send Email Notifications</label>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="notificationsSwitch" checked>
+                    <label class="onoffswitch-label" for="notificationsSwitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                </div>
+              </div>
 
-              <label for="">Set Profile to Public</label>
-              <input type="">
+              <div class="switch-n-label">
+                <label for="">Set Profile to Public</label>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="publicSwitch" checked>
+                    <label class="onoffswitch-label" for="publicSwitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                </div>
+              </div>
 
               <select id="timezone" name="user_timezone">
                 <option value="none" selected>Select Timezone</option>
