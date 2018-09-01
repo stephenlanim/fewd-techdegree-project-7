@@ -49,6 +49,13 @@
   fill: #fff;
   @include center-vertical;
   margin-right: 1em;
+
+  &:hover,
+  &:focus {
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
 }
 
 .avatar-div {

@@ -2,6 +2,31 @@
     Dashboard
    ====================================== */
 
+/* ===== Alert ===== */
+// create div element for flash alaert message
+let flashAlert = document.createElement('DIV');
+let $flashAlert = $(flashAlert);
+
+// add ID or class to flashAlert
+$flashAlert.attr('class', 'notif-alert').attr('id', 'flashAlert');
+
+// Insert message text into flashAlert
+$flashAlert.html('<span><strong>Alert:</strong> You have 1 unread message. Check notifications.</span> <span class="close-x">&times;</span>');
+
+// Insert flashAlert either after div.topper or beore div.widgets
+$flashAlert.insertAfter('.topper');
+
+// Start flashAlert as hidden upon page load, then display it
+$('#flashAlert')
+  .hide()
+  .slideDown(1000);
+
+// When flashAlert is clicked,
+$flashAlert.on('click', function(){
+  // Hide flashAlert
+  $flashAlert.slideUp(400);
+});
+
 /* ===== Traffic Chart ===== */
 
 var $trafficCanvas = $('canvas#trafficChart');

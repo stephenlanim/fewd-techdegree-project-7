@@ -24,6 +24,7 @@
   // grid-auto-rows: 50px;
   grid-template-areas:
     "topper topper"
+    "notification notification"
     "widgets widgets";
 }
 
@@ -110,6 +111,11 @@ main {
   &:active {
     border-color: $color-primary;
   }
+}
+
+// Notifications Section
+.notif-alert {
+  grid-area: notification;
 }
 
 // Widgets Section

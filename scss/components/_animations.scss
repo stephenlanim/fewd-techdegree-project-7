@@ -1,0 +1,18 @@
+/* ======================================
+    Animations
+   ====================================== */
+
+/* Animation for shaking a chosen letter */
+@keyframes shake {
+  0% {transform: rotate(0deg);}
+  10% {transform: rotate(10deg) scale(1.03);}
+  20% {transform: rotate(-10deg) scale(1.06);}
+  30% {transform: rotate(10deg) scale(1.09);}
+  40% {transform: rotate(-10deg) scale(1.12);}
+  50% {transform: rotate(10deg) scale(1.15);}
+  60% {transform: rotate(-10deg) scale(1.18);}
+  70% {transform: rotate(10deg) scale(1.21);}
+  80% {transform: rotate(-10deg) scale(1.24);}
+  90% {transform: rotate(10deg) scale(1.27);}
+  100% {transform: rotate(0deg) scale(1.3);}
+}
