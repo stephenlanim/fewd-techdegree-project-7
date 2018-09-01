@@ -7,7 +7,7 @@ h2 {
 }
 
 .widgets > div {
-  padding: 1em;
+  padding: 2em;
   @include mq("xs") {
     border-right: none;
   }

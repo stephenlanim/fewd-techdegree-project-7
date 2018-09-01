@@ -745,6 +745,34 @@ main {
   padding-left: 1em; }
 
 /* ======================================
+    Buttons Styles
+   ====================================== */
+button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+  text-transform: uppercase;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in; }
+  .message-user button {
+    width: 100%; }
+  .settings button {
+    width: 40%; }
+
+.submit-btn {
+  background-color: #7377bf; }
+  .submit-btn:hover, .submit-btn:focus {
+    background-color: #40448c; }
+
+.cancel-btn {
+  background-color: #b2b2b2; }
+  .cancel-btn:hover, .cancel-btn:focus {
+    background-color: #7f7f7f; }
+
+/* ======================================
     Forms Styles
    ====================================== */
 .form {
@@ -792,13 +820,21 @@ form textarea {
   form textareaactive {
     border-color: #7477bf; }
 
+.message-user [type="search"] {
+  width: 100%; }
+
 .message-user textarea {
   resize: none;
   width: 100%; }
 
 .settings select {
   display: block;
+  margin: 1em 0;
   width: 100%; }
+
+.settings .btns-wrapper {
+  display: flex;
+  justify-content: space-between; }
 
 /* ======================================
     On/Off Switch
@@ -809,7 +845,7 @@ form textarea {
 .switch-n-label {
   display: flex;
   align-items: center;
-  margin: 2em 0;
+  margin: 3.23em 0;
   width: 60%; }
 
 .onoffswitch {
@@ -908,41 +944,13 @@ form textarea {
   max-width: 100%; }
 
 /* ======================================
-    Buttons Styles
-   ====================================== */
-button {
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 1em;
-  margin: 1em 0;
-  text-transform: uppercase;
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in; }
-  .message-user button {
-    width: 100%; }
-  .settings button {
-    width: 40%; }
-
-.submit-btn {
-  background-color: #7377bf; }
-  .submit-btn:hover, .submit-btn:focus {
-    background-color: #40448c; }
-
-.cancel-btn {
-  background-color: #b2b2b2; }
-  .cancel-btn:hover, .cancel-btn:focus {
-    background-color: #7f7f7f; }
-
-/* ======================================
     Widgets Styles
    ====================================== */
 h2 {
   text-transform: uppercase; }
 
 .widgets > div {
-  padding: 1em; }
+  padding: 2em; }
   @media (max-width: 599px) {
     .widgets > div {
       border-right: none; } }
