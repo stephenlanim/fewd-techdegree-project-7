@@ -1,6 +1,0 @@
-// ======================================
-//  Functions
-// ======================================
-@function grid-maker($col-num, $total-cols) {
-  @return ($col-num / $total-cols) * 100%;
-}

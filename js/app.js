@@ -3,7 +3,7 @@
    ====================================== */
 
 /* ===== Normal Alert ===== */
-// See alerts.js for source code
+// See alerts.js for source code.
 const notificationMsg = '<span><strong>Alert:</strong> You have 1 unread message. Check notifications.</span> <span class="close-x">&times;</span>';
 
 // Create an alert message box, place it before the widgets section, and insert the above alert message.
@@ -169,7 +169,7 @@ $messageForm.on('submit', function (e) {
   if ($searchUser.val() === '' || $messageUser.val() === '') {
 
     /* ----- Error Alert ----- */
-    // See alerts.js for source code
+    // See alerts.js for source code.
     const errorMessage = 'You must provide both a message recipient and a message before submitting the form.</span> <span class="close-x">&times;</span>';
 
     // Create error message box, place it before the Message User form, and insert the above error message.
@@ -183,7 +183,7 @@ $messageForm.on('submit', function (e) {
     $errorMsg.remove();
 
     /* ----- Confirmation Alert ----- */
-    // See alerts.js for source code
+    // See alerts.js for source code.
     const confirmationMessage = 'Your message was sent successfully.</span> <span class="close-x">&times;</span>';
 
     // Create confirmation message box, place it before the Message User form, and insert the above confirmation message.

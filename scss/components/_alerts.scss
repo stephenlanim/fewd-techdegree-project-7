@@ -26,22 +26,22 @@
 
 .confirmation {
   @include alert;
-  background-color: $color-secondary;
+  background-color: $success-color;
 
   &:hover .close-x,
   &focus .close-x {
     background-color: #fff;
-    color: $color-secondary;
+    color: $success-color;
   }
 }
 
 .error {
   @include alert;
-  background-color: $color-error;
+  background-color: $error-color;
 
   &:hover .close-x,
   &focus .close-x {
     background-color: #fff;
-    color: $color-error;
+    color: $error-color;
   }
 }

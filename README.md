@@ -6,8 +6,9 @@ This project involved:
 - CSS grid layout,
 - styling SVGs,
 - data visualization via Chart.js plugin,
-- On/Off toggle switch plugin from Proto.io,
-- Sass CSS preprocessor
+- on/off toggle switch plugin from Proto.io,
+- Sass CSS preprocessor,
+- refactoring code for efficiency and readability
 
 
 The media query breakpoints used in this project follow the recommendations in the Free Code Camp article “The 100% correct way to do CSS breakpoints” found at: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862.
