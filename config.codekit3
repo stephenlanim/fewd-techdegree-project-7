@@ -233,6 +233,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/js\/app-charts.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/js\/app-charts-min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/js\/app-forms.js": {
 		"ft": 64,
 		"ma": 0,
@@ -427,6 +437,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/components\/_nav.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/components\/_toggle-switch.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/components\/_toggle-switch.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

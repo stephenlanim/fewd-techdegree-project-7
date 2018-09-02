@@ -19,7 +19,7 @@ $messageForm.on('submit', function (e) {
     const errorMessage = 'You must provide both a message recipient and a message before submitting the form.</span> <span class="close-x">&times;</span>';
 
     // Create error message box, place it before the Message User form, and insert the above error message.
-    alertMessage('error', 'messageForm', errorMessage);
+    alertMessage('error', 'msgFormAlerts', errorMessage);
 
   }
   else {
@@ -33,7 +33,7 @@ $messageForm.on('submit', function (e) {
     const confirmationMessage = 'Your message was sent successfully.</span> <span class="close-x">&times;</span>';
 
     // Create confirmation message box, place it before the Message User form, and insert the above confirmation message.
-    alertMessage('confirmation', 'messageForm', confirmationMessage);
+    alertMessage('confirmation', 'msgFormAlerts', confirmationMessage);
 
   }
 });

@@ -5,7 +5,7 @@
    ====================================== */
 
 // Function for creating an alert message
-function alertMessage(alertType, placementBefore, message) {
+function alertMessage(alertType, appendTo, message) {
 
   // create div element for alert message
   let $alertType = $('<div></div>');
@@ -16,8 +16,8 @@ function alertMessage(alertType, placementBefore, message) {
   // Insert message text into alert message
   $alertType.html(message);
 
-  // Insert alert message before DOM object
-  $alertType.insertBefore('#' + `${placementBefore}`);
+  // Append alert message to placeholder indicated
+  $alertType.appendTo('#' + `${appendTo}`);
 
   // Start alert message as hidden upon page load, then display it
   $('#' + `${alertType}` + '')

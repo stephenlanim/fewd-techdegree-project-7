@@ -392,7 +392,7 @@ main {
   #search:focus, #search:active {
     border-color: #7477bf; }
 
-.alert {
+#userAlerts {
   grid-area: alert; }
 
 .confirmation {
