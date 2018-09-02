@@ -6,6 +6,7 @@ This project involved:
 - CSS grid layout,
 - styling SVGs,
 - data visualization via Chart.js plugin,
+- object property configuration,
 - on/off toggle switch plugin from Proto.io,
 - Sass CSS preprocessor,
 - refactoring code for efficiency and readability

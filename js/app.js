@@ -1,68 +1,43 @@
 /* ======================================
-    Dashboard
+    Dashboard Functionality
    ====================================== */
 
 /* ===== Normal Alert ===== */
 // See alerts.js for source code.
-const notificationMsg = '<span><strong>Alert:</strong> You have 1 unread message. Check notifications.</span> <span class="close-x">&times;</span>';
+const notificationMsg1 = '<span><strong>Alert:</strong> You have 1 unread message. Check notifications.</span> <span class="close-x">&times;</span>';
 
 // Create an alert message box, place it before the widgets section, and insert the above alert message.
-alertMessage('alert', 'widgets', notificationMsg);
+alertMessage('alert', 'widgets', notificationMsg1);
 
+/* ===== Global Chart Configuration ===== */
+
+Chart.defaults.global.responsive = true;
+Chart.defaults.global.maintainAspectRatio = false;
 
 /* ===== Traffic Chart ===== */
 
 var $trafficCanvas = $('canvas#trafficChart');
+// Control chart display dimensions
+$trafficCanvas.parent().css({'width': '80vw','height': '40vh'});
+
 var trafficLineChart = new Chart($trafficCanvas, {
    type: 'line',
    data: {
-       labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+       labels: ["July 8-14", "July 15-21", "July 22-28", "July 29 - Aug 4", "Aug 5-11", "Aug 12-18"],
        datasets: [{
-           label: '# of Votes',
-           data: [12, 19, 3, 5, 2, 3],
+           label: '# of Visitors',
+           data: [500, 1000, 750, 1200, 800, 1300],
            backgroundColor: 'rgba(116, 119, 191, 0.4)',
            borderColor: 'rgb(116, 119, 191)',
            borderWidth: 1,
            pointRadius: 6,
            pointBackgroundColor: '#fff',
            pointBorderWidth: 2,
-           pointBorderColor: '#7477bf'
+           pointBorderColor: '#7477bf',
+           tension: 0
        }]
    },
    options: {
-       maintainAspectRatio: false,
-       scales: {
-           yAxes: [{
-               ticks: {
-                   beginAtZero:true
-               }
-           }]
-       }
-   },
-   responsive: true
-});
-
-$trafficCanvas.parent().css({'width': '80vw','height': '40vh'});
-
-
-/* ===== Daily Traffic Chart ===== */
-
-var $dailyTrafficCanvas = $('canvas#dailyTrafficChart');
-var dailyTrafficBarChart = new Chart($dailyTrafficCanvas, {
-   type: 'bar',
-   data: {
-       labels: ["S", "M", "T", "W", "T", "F", "S"],
-       datasets: [{
-           label: '# of Votes',
-           data: [50, 75, 150, 100, 200, 175, 75],
-           // categoryPercentage: 0.4,
-           backgroundColor: 'rgb(116, 119, 191)',
-           borderRadius: 10,
-           borderWidth: 1
-       }]
-   },
-   options: {
-       maintainAspectRatio: false,
        scales: {
            yAxes: [{
                ticks: {
@@ -73,22 +48,59 @@ var dailyTrafficBarChart = new Chart($dailyTrafficCanvas, {
        legend: {
          display: false
        }
-   },
-   responsive: true
+   }
 });
 
+
+/* ===== Daily Traffic Chart ===== */
+
+var $dailyTrafficCanvas = $('canvas#dailyTrafficChart');
+
+// Control chart display dimensions
 $dailyTrafficCanvas.parent().css({'width': '80%','height': '40vh'});
+
+// Create and configure chart
+var dailyTrafficBarChart = new Chart($dailyTrafficCanvas, {
+   type: 'bar',
+   data: {
+       labels: ["S", "M", "T", "W", "T", "F", "S"],
+       datasets: [{
+           label: '# of Visitors',
+           data: [50, 75, 150, 100, 200, 175, 75],
+           // categoryPercentage: 0.4,
+           backgroundColor: 'rgb(116, 119, 191)',
+           borderRadius: 10,
+           borderWidth: 1
+       }]
+   },
+   options: {
+       scales: {
+           yAxes: [{
+               ticks: {
+                   beginAtZero:true
+               }
+           }]
+       },
+       legend: {
+         display: false
+       }
+   }
+});
 
 
 /* ===== Mobile Users Chart ===== */
 
 var $mobileUsersCanvas = $('canvas#mobileUsersChart');
+// Control chart display dimensions
+$mobileUsersCanvas.parent().css({'width': '80%','height': '40vh'});
+
+// Create and configure chart
 var mobileUserDonutChart = new Chart($mobileUsersCanvas, {
    type: 'doughnut',
    data: {
        labels: ["Photos", "Tablets", "Desktop"],
        datasets: [{
-           label: '# of Votes',
+           label: '# of Users',
            data: [15, 20, 65],
            backgroundColor: [
                '#74b1bf',
@@ -99,7 +111,6 @@ var mobileUserDonutChart = new Chart($mobileUsersCanvas, {
        }]
    },
    options: {
-       maintainAspectRatio: false,
        scales: {
            yAxes: [{
                display: false
@@ -108,86 +119,5 @@ var mobileUserDonutChart = new Chart($mobileUsersCanvas, {
        legend: {
          position: 'right'
        }
-   },
-   responsive: true
-});
-
-$mobileUsersCanvas.parent().css({'width': '80%','height': '40vh'});
-
-// Sample 2
-
-//    var data = {
-//   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-//   datasets: [{
-//     label: "Dataset #1",
-//     backgroundColor: "rgba(255,99,132,0.2)",
-//     borderColor: "rgba(255,99,132,1)",
-//     borderWidth: 2,
-//     hoverBackgroundColor: "rgba(255,99,132,0.4)",
-//     hoverBorderColor: "rgba(255,99,132,1)",
-//     data: [65, 59, 20, 81, 56, 55, 40],
-//   }]
-// };
-//
-// var options = {
-//   maintainAspectRatio: false,
-//   scales: {
-//     yAxes: [{
-//       stacked: true,
-//       gridLines: {
-//         display: true,
-//         color: "rgba(255,99,132,0.2)"
-//       }
-//     }],
-//     xAxes: [{
-//       gridLines: {
-//         display: false
-//       }
-//     }]
-//   }
-// };
-//
-// Chart.Bar('chart', {
-//   options: options,
-//   data: data
-// });
-
-/* ===== Message User ===== */
-const $searchUser = $('#searchUser');
-const $messageUser = $('#messageUser');
-const $sendBtn = $('#sendBtn');
-const $messageForm = $('#messageForm');
-
-// When user submits message
-$messageForm.on('submit', function (e) {
-
-  // Stop form from submitting normally
-  e.preventDefault();
-
-
-  // If either searchUser or messageUser input is empty
-  if ($searchUser.val() === '' || $messageUser.val() === '') {
-
-    /* ----- Error Alert ----- */
-    // See alerts.js for source code.
-    const errorMessage = 'You must provide both a message recipient and a message before submitting the form.</span> <span class="close-x">&times;</span>';
-
-    // Create error message box, place it before the Message User form, and insert the above error message.
-    alertMessage('error', 'messageForm', errorMessage);
-
-  }
-  else {
-    const $errorMsg = $('#error');
-
-    // Remove error message
-    $errorMsg.remove();
-
-    /* ----- Confirmation Alert ----- */
-    // See alerts.js for source code.
-    const confirmationMessage = 'Your message was sent successfully.</span> <span class="close-x">&times;</span>';
-
-    // Create confirmation message box, place it before the Message User form, and insert the above confirmation message.
-    alertMessage('confirmation', 'messageForm', confirmationMessage);
-
-  }
+   }
 });
