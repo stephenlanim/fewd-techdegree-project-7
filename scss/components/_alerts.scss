@@ -1,0 +1,47 @@
+/* ======================================
+    Page Notifications Styles
+   ====================================== */
+
+.close-x {
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  @include transition;
+}
+
+.alert {
+  @include alert;
+   background-color: $color-primary;
+
+   &:hover .close-x,
+   &focus .close-x {
+     background-color: #fff;
+     color: $color-primary;
+   }
+}
+
+.confirmation {
+  @include alert;
+  background-color: $color-secondary;
+
+  &:hover .close-x,
+  &focus .close-x {
+    background-color: #fff;
+    color: $color-secondary;
+  }
+}
+
+.error {
+  @include alert;
+  background-color: $color-error;
+
+  &:hover .close-x,
+  &focus .close-x {
+    background-color: #fff;
+    color: $color-error;
+  }
+}

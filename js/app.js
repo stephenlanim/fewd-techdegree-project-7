@@ -3,28 +3,31 @@
    ====================================== */
 
 /* ===== Alert ===== */
-// create div element for flash alaert message
+
+// create div element for flash alert message
 let flashAlert = document.createElement('DIV');
 let $flashAlert = $(flashAlert);
 
-// add ID or class to flashAlert
-$flashAlert.attr('class', 'notif-alert').attr('id', 'flashAlert');
+// add class and ID to alert message for styling and DOM manipulation
+$flashAlert.attr('class', 'alert').attr('id', 'flashAlert');
 
-// Insert message text into flashAlert
+// Insert message text into alert message
 $flashAlert.html('<span><strong>Alert:</strong> You have 1 unread message. Check notifications.</span> <span class="close-x">&times;</span>');
 
-// Insert flashAlert either after div.topper or beore div.widgets
+// Insert alert message after div.topper
 $flashAlert.insertAfter('.topper');
 
-// Start flashAlert as hidden upon page load, then display it
+// Start alert message as hidden upon page load, then display it
 $('#flashAlert')
   .hide()
-  .slideDown(1000);
+  .slideDown(500);
 
-// When flashAlert is clicked,
+// When alert message is clicked...
 $flashAlert.on('click', function(){
-  // Hide flashAlert
-  $flashAlert.slideUp(400);
+
+  // Remove alert message
+  $flashAlert.remove();
+
 });
 
 /* ===== Traffic Chart ===== */
@@ -168,3 +171,82 @@ $mobileUsersCanvas.parent().css({'width': '80%','height': '40vh'});
 //   options: options,
 //   data: data
 // });
+
+/* ===== Message User ===== */
+const $searchUser = $('#searchUser');
+const $messageUser = $('#messageUser');
+const $sendBtn = $('#sendBtn');
+const $messageForm = $('#messageForm');
+
+// When user submits message
+$messageForm.on('submit', function (e) {
+
+  // Stop form from submitting normally
+  e.preventDefault();
+
+
+  // If either searchUser or messageUser input is empty
+  if ($searchUser.val() === '' || $messageUser.val() === '') {
+
+    /* ----- Error Alert ----- */
+
+    // create div element for error message
+    let errorMsg = document.createElement('DIV');
+    let $errorMsg = $(errorMsg);
+
+    // add ID or class to confirmation div
+    $errorMsg.attr('class', 'error').attr('id', 'errorMsg');
+
+    // Insert error text into confirmation
+    $errorMsg.html('You must provide both a message recipient and a message before submitting the form.</span> <span class="close-x">&times;</span>');
+
+    // Insert error message before message form
+    $errorMsg.insertBefore($messageForm);
+
+    // Start error message as hidden upon page load, then display it
+    $('#errorMsg')
+      .hide()
+      .slideDown(500);
+
+    // When error message is clicked,
+    $errorMsg.on('click', function(){
+      // Remove error message
+      $errorMsg.remove();
+
+    });
+
+  }
+  else {
+    const $errorMsg = $('#errorMsg');
+
+    // Remove error message
+    $errorMsg.remove();
+
+    /* ----- Confirmation Alert ----- */
+
+    // create div element for confirmation message
+    let msgSent = document.createElement('DIV');
+    let $msgSent = $(msgSent);
+
+    // add ID or class to confirmation div
+    $msgSent.attr('class', 'confirmation').attr('id', 'msgSent');
+
+    // Insert message text into confirmation
+    $msgSent.html('Your message was sent successfully.</span> <span class="close-x">&times;</span>');
+
+    // Insert confirmation message before message form
+    $msgSent.insertBefore($messageForm);
+
+    // Start confirmation message as hidden upon page load, then display it
+    $('#msgSent')
+      .hide()
+      .slideDown(500);
+
+    // When confirmation message is clicked,
+    $msgSent.on('click', function(){
+      // Remove confirmation message
+      $msgSent.remove();
+
+    });
+  }
+});
