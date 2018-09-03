@@ -8,3 +8,16 @@ const notificationMsg1 = '<span><strong>Alert:</strong> You have 1 unread messag
 
 // Create an alert message box, place it before the widgets section, and insert the above alert message.
 alertMessage('alert', 'userAlerts', notificationMsg1);
+
+/* ===== Search Autocomplete ===== */
+
+// Array of members
+const memberDirectory = [
+  'Dale Byrd',
+  'Victoria Chambers',
+  'Dan Oliver',
+  'Dawn Wood'
+]
+
+// Apply autocomplete to searchUser input
+$('#searchUser').autocomplete({source: memberDirectory});
