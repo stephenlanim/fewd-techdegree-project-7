@@ -78,14 +78,38 @@
 
           <div class="traffic">
             <h2>Traffic</h2>
+            <!-- Toggle Switch for Traffic Line Graph -->
+            <fieldset class="switch-field">
+              <div class="switch-toggle switch-candy">
+                <input id="hourlySwitch" class="chart-switch" name="view" type="radio">
+                <label for="hourlySwitch" onclick="">Hourly</label>
+
+                <input id="dailySwitch" class="chart-switch" name="view" type="radio">
+                <label for="dailySwitch" onclick="">Daily</label>
+
+                <input id="weeklySwitch" class="chart-switch" name="view" type="radio" checked>
+                <label for="weeklySwitch" onclick="">Weekly</label>
+
+                <input id="monthlySwitch" class="chart-switch" name="view" type="radio">
+                <label for="monthlySwitch" onclick="">Monthly</label>
+
+                <a></a>
+              </div>
+            </fieldset>
+
+            <!-- Traffic Line Graph -->
             <div class="chart-container">
-              <canvas id="trafficChart"></canvas>
+              <canvas id="hourlyTrafficLineGraph" class="traffic-line-graph"></canvas>
+              <canvas id="dailyTrafficLineGraph" class="traffic-line-graph"></canvas>
+              <canvas id="weeklyTrafficLineGraph" class="traffic-line-graph"></canvas>
+              <canvas id="monthlyTrafficLineGraph" class="traffic-line-graph"></canvas>
             </div>
 
           </div>
 
           <div class="daily-traffic">
             <h2>Daily Traffic</h2>
+            <!-- Daily Traffic Bar Graph -->
             <div class="chart-container">
               <canvas id="dailyTrafficChart"></canvas>
             </div>
@@ -93,6 +117,7 @@
 
           <div class="mobile-users">
             <h2>Mobile Users</h2>
+            <!-- Mobile Users Doughnut Chart -->
             <div class="chart-container">
               <canvas id="mobileUsersChart"></canvas>
             </div>

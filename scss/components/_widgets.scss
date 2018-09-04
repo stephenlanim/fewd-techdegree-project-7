@@ -13,6 +13,28 @@ h2 {
   }
 }
 
+.switch-field {
+  border: none;
+  width: 80vw;
+}
+
+.switch-toggle {
+  @include mq("xs") {
+    margin: 1em auto;
+    width: 60%;
+  }
+  @include mq("sm") {
+    margin-left: auto;
+    margin-right: 1em;
+    width: 50%;
+  }
+  @include mq ("med") {
+    margin-left: auto;
+    margin-right: 0;
+    width: 30%;
+  }
+}
+
 .chart-container {
   position: relative;
   margin: auto;
@@ -32,6 +54,22 @@ h2 {
 .social-stats,
 .settings {
   border-top: $border-line;
+}
+
+#trafficLineGraphHourly {
+  display: none;
+}
+
+#trafficLineGraphDaily {
+  display: none;
+}
+
+#trafficLineGraphWeekly {
+  display: block;
+}
+
+#trafficLineGraphMonthly {
+  display: none;
 }
 
 #trafficChart {

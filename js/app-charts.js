@@ -11,7 +11,7 @@ Chart.defaults.global.maintainAspectRatio = false;
 
 /* ===== Traffic Chart ===== */
 
-var $trafficCanvas = $('canvas#trafficChart');
+var $trafficCanvas = $('canvas#weeklyTrafficLineGraph');
 // Control chart display dimensions
 $trafficCanvas.parent().css({'width': '80vw','height': '40vh'});
 
@@ -116,3 +116,109 @@ var mobileUserDonutChart = new Chart($mobileUsersCanvas, {
        }
    }
 });
+
+/* ===== Chart Switcher ===== */
+const $chartSwitches = $('.chart-switch');
+const $trafficLineGraphs = $('.traffic-line-graph');
+
+// $('#hourlySwitch').on('click change', () => {
+//   $trafficLineGraphs.hide();
+//   $('#hourlyTrafficLineGraph').show();
+// });
+//
+// $('#dailySwitch').on('click change', () => {
+//   $trafficLineGraphs.hide();
+//   $('#dailyTrafficLineGraph').show();
+// });
+//
+// $('#weeklySwitch').on('click change', () => {
+//   $trafficLineGraphs.hide();
+//   $('#weeklyTrafficLineGraph').show();
+// });
+//
+// $('#monthlySwitch').on('click change', () => {
+//   $trafficLineGraphs.hide();
+//   $('#monthlyTrafficLineGraph').show();
+// });
+
+// Show whichever chart is "checked" by default in the HTML
+// Loop through chart switches
+  // for (let i = 0; i < $chartSwitches.length; i++) {
+  //   if ($chartSwitches.eq(i).attr('checked')) {
+  //     // Hide all other charts
+  //     $trafficLineGraphs.hide();
+  //     // Show the chart corresponding with the checked switch
+  //     $trafficLineGraphs.eq(i).show();
+  //   }
+  // }
+
+function showChart() {
+// Loop through chart switches
+  for (let i = 0; i < $chartSwitches.length; i++) {
+    if ($chartSwitches.eq(i).attr('checked')) {
+      $trafficLineGraphs.hide();
+      // console.log($trafficLineGraphs.eq(i));
+      $trafficLineGraphs.eq(i).show();
+    }
+  }
+}
+showChart();
+
+$chartSwitches.on('click', function(e) {
+  // let clickedSwitch = e.target;
+  // Loop through chart switches
+    // for (let i = 0; i < $chartSwitches.length; i++) {
+    //   if ($(e.target).eq(i)) {
+    //     $trafficLineGraphs.hide();
+    //     console.log($trafficLineGraphs.eq(i));
+    //     $trafficLineGraphs.eq(i).show();
+    //   }
+    // }
+    // $chartSwitches.each( function(index){
+    //   if ($(this).eq(index)) {
+    //       $trafficLineGraphs.hide();
+    //       console.log($trafficLineGraphs.eq(index));
+    //       $trafficLineGraphs.eq(index).show();
+    //     }
+    // });
+
+    // Remove "checked" status from all switches
+    $chartSwitches.attr('checked', false);
+
+    // Add "checked" status to clicked switch
+    $(this).attr('checked', true);
+    // Show the cart that corresponds with the checked switch
+    showChart();
+
+});
+
+
+
+// Hide all charts
+// $trafficLineGraphs.hide();
+
+// // when user selects/checks chart switch...
+// $chartSwitch.each(
+//   this.change( function (index) {
+//
+//     // Show corresponding chart and hide others
+//     $trafficLineGraphs[index].show();
+//
+// }));
+// $trafficLineGraphs.hide();
+// if chart switch is checked...
+// if ($('.chart-switch:checked').eq() === $trafficLineGraphs.eq()) {
+  // Hide charts
+
+  // Show corresponding chart
+  // $trafficLineGraphs.show();
+
+  // if this $chartSwitch's first 5 letters match chart's first 5 letters...
+
+  // if index number of checked chart switch matches index number of chart
+  // if ($chartSwitch.eq() ) {
+  //
+  // }
+
+
+// }
