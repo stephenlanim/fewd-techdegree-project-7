@@ -40,6 +40,13 @@
 		"oAP": "\/css\/styles.css.map",
 		"oF": 0
 		},
+	"\/css\/toggle-switch.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/toggle-switch.css.map",
+		"oF": 1
+		},
 	"\/dashboard.png": {
 		"ft": 32768,
 		"iS": 205601,
