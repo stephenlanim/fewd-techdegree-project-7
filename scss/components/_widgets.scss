@@ -38,8 +38,6 @@ h2 {
 .chart-container {
   position: relative;
   margin: auto;
-  // width: 80vw;
-  // height: 40vh;
 }
 
 .daily-traffic,
@@ -71,23 +69,6 @@ h2 {
 #trafficLineGraphMonthly {
   display: none;
 }
-
-#trafficChart {
-  // display: block;
-  // width: 600px;
-  // height: 300px;
-}
-
-canvas {
-  // border: 1px dotted red;
-}
-
-// .chart-container {
-//   position: relative;
-//   margin: auto;
-//   height: 80vh;
-//   width: 60vw;
-// }
 
 .social-wrapper {
   @include flexbox($dir: row, $wrap: wrap, $just: space-between);
