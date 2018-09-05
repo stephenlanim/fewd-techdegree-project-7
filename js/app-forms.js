@@ -37,3 +37,36 @@ $messageForm.on('submit', function (e) {
 
   }
 });
+
+/* ===== User Settings ===== */
+const $onOffSwitch = $('.onoffswitch-inner');
+const $switchCheckbox = $('.onoffswitch-checkbox');
+const $notifSwitch = $('#notificationsSwitch');
+const $publicSwitch = $('#publicSwitch');
+
+// Function to turn any settings switch on and off when clicked
+function turnOnOff() {
+  // When any settings switch is clicked...
+  $onOffSwitch.on('click', function(e) {
+    // Note: the clicked object is a nephew <span> of the actual <input> checkbox. (Other note: I don't think "nephew" is an official web development term, but you know what I mean.)
+    const $thisSwitch = $(this).parent().parent().find($switchCheckbox);
+    // If the switch is already on...
+    if ($thisSwitch.attr('checked')) {
+      // Turn switch to off
+      $thisSwitch.attr('checked', false);
+      // console.log("It's now OFF.");
+    }
+    else {
+      // Turn switch to on
+      $thisSwitch.attr('checked', true);
+      // console.log("It's back ON.");
+    }
+
+  });
+}
+
+turnOnOff();
+
+// localStorage.
+
+// When user clicks "save" button...
