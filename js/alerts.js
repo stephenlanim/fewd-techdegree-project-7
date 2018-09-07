@@ -8,16 +8,16 @@
 function alertMessage(alertType, appendTo, message) {
 
   // create div element for alert message
-  let $alertType = $('<div></div>');
+  let $alertDiv = $('<div></div>');
 
   // add class and ID to alert message for styling and DOM manipulation
-  $alertType.attr('class', `${alertType}`).attr('id', `${alertType}`);
+  $alertDiv.attr('class', `${alertType}`).attr('id', `${alertType}`);
 
   // Insert message text into alert message
-  $alertType.html(message);
+  $alertDiv.html(message);
 
   // Append alert message to placeholder indicated
-  $alertType.appendTo('#' + `${appendTo}`);
+  $alertDiv.appendTo('#' + `${appendTo}`);
 
   // Start alert message as hidden upon page load, then display it
   $('#' + `${alertType}` + '')
@@ -25,10 +25,10 @@ function alertMessage(alertType, appendTo, message) {
     .slideDown(500);
 
   // When alert message is clicked...
-  $alertType.on('click', function(){
+  $alertDiv.on('click', function(){
 
     // Remove alert message
-    $alertType.remove();
+    $alertDiv.remove();
 
   });
 

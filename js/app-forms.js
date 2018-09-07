@@ -44,9 +44,6 @@ const $onOffSwitch = $('.onoffswitch-inner');
 const $switchCheckbox = $('.onoffswitch-checkbox');
 const $emailNotifSwitch = $('#emailNotifSwitch');
 const $privacySwitch = $('#privacySwitch');
-const $timezone = $('#timezone');
-const $timezoneOption = $('#timezone option');
-const $saveSettingsBtn = $('#saveSettingsBtn');
 const $cancelChangesBtn = $('#cancelChangesBtn');
 
 // When user clicks "save" button...
@@ -62,6 +59,13 @@ $settingsForm.on('submit', function (e) {
 
   // Save selected timezone option to local storage
   localStorage.setItem('savedTimezoneSelection', $('#timezone option:selected').index());
+
+  /* ----- Saved Settings Alert ----- */
+  // See alerts.js for source code.
+  const settingsSavedMessage = 'Your settings were saved successfully.</span> <span class="close-x">&times;</span>';
+
+  // Create confirmation message box, place it before the Message User form, and insert the above confirmation message.
+  alertMessage('confirmation', 'settingsFormAlerts', settingsSavedMessage);
 
 });
 
