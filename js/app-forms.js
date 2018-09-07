@@ -2,7 +2,6 @@
 // Get message-user form objects
 const $searchUser = $('#searchUser');
 const $messageUser = $('#messageUser');
-const $sendBtn = $('#sendBtn');
 const $messageForm = $('#messageForm');
 
 // When user submits message
@@ -42,7 +41,6 @@ $messageForm.on('submit', function (e) {
 /* ===== User Settings ===== */
 // Get settings form objects
 const $settingsForm = $('#settingsForm');
-const $onOffSwitch = $('.onoffswitch-inner');
 const $switchCheckbox = $('.onoffswitch-checkbox');
 const $emailNotifSwitch = $('#emailNotifSwitch');
 const $privacySwitch = $('#privacySwitch');
