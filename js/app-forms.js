@@ -1,4 +1,5 @@
 /* ===== Message User ===== */
+// Get message-user form objects
 const $searchUser = $('#searchUser');
 const $messageUser = $('#messageUser');
 const $sendBtn = $('#sendBtn');
@@ -39,6 +40,7 @@ $messageForm.on('submit', function (e) {
 });
 
 /* ===== User Settings ===== */
+// Get settings form objects
 const $settingsForm = $('#settingsForm');
 const $onOffSwitch = $('.onoffswitch-inner');
 const $switchCheckbox = $('.onoffswitch-checkbox');
@@ -46,6 +48,7 @@ const $emailNotifSwitch = $('#emailNotifSwitch');
 const $privacySwitch = $('#privacySwitch');
 const $cancelChangesBtn = $('#cancelChangesBtn');
 
+/* ----- Form Submission ----- */
 // When user clicks "save" button...
 $settingsForm.on('submit', function (e) {
   // Stop form from submitting normally
@@ -70,26 +73,35 @@ $settingsForm.on('submit', function (e) {
 });
 
 
+/* ----- Settings Local Storage ----- */
+// Get initial values of local storage objects upon page loading
+const initialEmailSetting = localStorage.getItem('savedEmailSetting');
+const initialPrivacySetting =  JSON.parse(localStorage.getItem('savedPrivacySetting'));
+const initialTimezoneSelection = JSON.parse(localStorage.getItem('savedTimezoneSelection'));
+
 // Utility function for checking what values are in local storage for the user settings properties
-function checkSavedSettings() {
-  // Check saved settings
-  console.log(localStorage.getItem('savedEmailSetting'));
-  console.log(localStorage.getItem('savedPrivacySetting'));
-  console.log(localStorage.getItem('savedTimezoneSelection'));
+function checkInitialSettings() {
+
+  console.log(initialEmailSetting);
+  console.log(initialPrivacySetting);
+  console.log(initialTimezoneSelection);
+
 }
 
-// checkSavedSettings()
+checkInitialSettings();
 
 
 // Function to get form settings from local storage
 function setSavedSettings() {
 
-  // Lesson Learned: Using localStorage.getItem('') always returns a string instead of a pure boolean value. So I had to convert that value into a boolean for its assigned value in the .prop() method to work properly. Below I show two different methods: 1) using a manual boolean assignment in an if/else statement; 2) using the JSON.parse() method to directly convert the string into a JavaScript object (in this case a boolean).
+  // Lesson Learned: Using localStorage.getItem('') always returns a string instead of a pure boolean value. So I had to convert that value into a boolean for its assigned value in the .prop() method to work properly. The method that worked consistenttly was using a manual boolean assignment in an if/else statement.
+  // The second method I tried used the JSON.parse() method to directly convert the string into a JavaScript object (in this case a boolean). BUT if there was nothing yet in local storage, it returned null, which was treated the same as false, thus turning the switch off.
+  // [Failed method: JSON.parse(localStorage.getItem('savedPrivacySetting'));]
 
   // Get local storage for email notifications switch
   const storedEmailSetting = localStorage.getItem('savedEmailSetting');
 
-  // Set email-notifications switch "checked" status to what's in local storage
+  // Set email-notifications switch's "checked" status to what's in local storage
   if (storedEmailSetting == "true") {
     $emailNotifSwitch.prop('checked', true);
     // console.log('truthy');
@@ -100,12 +112,20 @@ function setSavedSettings() {
   }
 
   // Get local storage for public switch
-  const storedPrivacySetting =  JSON.parse(localStorage.getItem('savedPrivacySetting'));
-  // Set email-notifications switch "checked" status to what's in local storage
-  $privacySwitch.prop('checked', storedPrivacySetting);
+  const storedPrivacySetting = localStorage.getItem('savedPrivacySetting');
+
+  // Set public switch's "checked" status to what's in local storage
+  if (storedEmailSetting == "true") {
+    $privacySwitch.prop('checked', true);
+    // console.log('truthy');
+  }
+  else if (storedEmailSetting == "false") {
+    $privacySwitch.prop('checked', false);
+    // console.log('fasley');
+  }
 
   // Get local storage for selected timezone option
-  const storedTimezoneSelection = JSON.parse(localStorage.getItem('savedTimezoneSelection'));
+  const storedTimezoneSelection = localStorage.getItem('savedTimezoneSelection');
   // Set "selected" timezone option to what's in local storage
   $('#timezone option').eq(storedTimezoneSelection).prop('selected', true);
 
@@ -116,12 +136,19 @@ $('document').ready(function(){
   setSavedSettings();
 });
 
-// $cancelChangesBtn.on('click', function () {
-//   setSavedSettings();
-// });
+// Function to restore settings back to values when page loaded
+function revertSettings() {
+  localStorage.setItem('savedEmailSetting', initialEmailSetting);
+  localStorage.setItem('savedPrivacySetting', initialPrivacySetting);
+  localStorage.setItem('savedTimezoneSelection', initialTimezoneSelection);
+}
+
+$cancelChangesBtn.on('click', function () {
+  revertSettings();
+});
 
 
-
+/* ----- Switches ----- */
 // Function to turn any settings switch on and off when clicked
 function turnOnOff() {
 
