@@ -648,6 +648,20 @@ ul#notifList {
     background-color: #fff;
     color: #d7353c; }
 
+.warning {
+  color: white;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin: 2em auto;
+  width: calc(100% - 100px);
+  display: flex;
+  align-items: center;
+  background-color: #74b1bf; }
+  .warning:hover .close-x,
+  .warningfocus .close-x {
+    background-color: #fff;
+    color: #74b1bf; }
+
 /* ======================================
     Buttons Styles
    ====================================== */

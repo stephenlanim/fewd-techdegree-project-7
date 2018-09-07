@@ -9,9 +9,11 @@ This project involved:
 - object property configuration,
 - on/off toggle switch plugin from Proto.io,
 - using local storage to save user input,
+- reverting user saved changes,
 - modular coding practices,
 - Sass CSS preprocessor,
-- refactoring code for efficiency and readability
+- refactoring code for efficiency and readability, and
+- plenty of debugging.
 
 
 The media query breakpoints used in this project follow the recommendations in the Free Code Camp article “The 100% correct way to do CSS breakpoints” found at: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862.

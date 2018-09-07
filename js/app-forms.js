@@ -57,7 +57,7 @@ $settingsForm.on('submit', function (e) {
   // Save email notifications switch "checked" status to local storage
   localStorage.setItem('savedEmailSetting', $emailNotifSwitch.prop('checked'));
 
-  // Save public switch "checked" status to local storage
+  // Save privacy switch "checked" status to local storage
   localStorage.setItem('savedPrivacySetting', $privacySwitch.prop('checked'));
 
   // Save selected timezone option to local storage
@@ -111,15 +111,16 @@ function setSavedSettings() {
     // console.log('fasley');
   }
 
-  // Get local storage for public switch
+
+  // Get local storage for privacy switch
   const storedPrivacySetting = localStorage.getItem('savedPrivacySetting');
 
-  // Set public switch's "checked" status to what's in local storage
-  if (storedEmailSetting == "true") {
+  // Set privacy switch's "checked" status to what's in local storage
+  if (storedPrivacySetting == "true") {
     $privacySwitch.prop('checked', true);
     // console.log('truthy');
   }
-  else if (storedEmailSetting == "false") {
+  else if (storedPrivacySetting == "false") {
     $privacySwitch.prop('checked', false);
     // console.log('fasley');
   }
@@ -131,7 +132,7 @@ function setSavedSettings() {
 
 }
 
-
+// Set user settings to those saved in local storage upon page loading
 $('document').ready(function(){
   setSavedSettings();
 });
@@ -143,8 +144,16 @@ function revertSettings() {
   localStorage.setItem('savedTimezoneSelection', initialTimezoneSelection);
 }
 
+// When user clicks cancel button...
 $cancelChangesBtn.on('click', function () {
   revertSettings();
+
+  /* ----- Cancel Changed Settings Alert ----- */
+  // See alerts.js for source code.
+  const settingsCancelMessage = 'Your settings were reverted back to their initial state before this session\'s changes.</span> <span class="close-x">&times;</span>';
+
+  // Create confirmation message box, place it before the Message User form, and insert the above confirmation message.
+  alertMessage('warning', 'settingsFormAlerts', settingsCancelMessage);
 });
 
 

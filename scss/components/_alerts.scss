@@ -45,3 +45,14 @@
     color: $error-color;
   }
 }
+
+.warning {
+  @include alert;
+  background-color: $warning-color;
+
+  &:hover .close-x,
+  &focus .close-x {
+    background-color: #fff;
+    color: $warning-color;
+  }
+}
