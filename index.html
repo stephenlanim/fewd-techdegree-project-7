@@ -301,8 +301,8 @@
               <div class="switch-n-label">
                 <label for="">Send Email Notifications</label>
                 <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="notificationsSwitch" checked>
-                    <label class="onoffswitch-label" for="notificationsSwitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="emailNotifSwitch" checked="true">
+                    <label class="onoffswitch-label" for="emailNotifSwitch">
                         <span class="onoffswitch-inner"></span>
                         <span class="onoffswitch-switch"></span>
                     </label>
@@ -312,8 +312,8 @@
               <div class="switch-n-label">
                 <label for="">Set Profile to Public</label>
                 <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="publicSwitch" checked>
-                    <label class="onoffswitch-label" for="publicSwitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="privacySwitch" checked="false">
+                    <label class="onoffswitch-label" for="privacySwitch">
                         <span class="onoffswitch-inner"></span>
                         <span class="onoffswitch-switch"></span>
                     </label>
@@ -406,8 +406,8 @@
               	<option timeZoneId="82" gmtAdjustment="GMT+13:00" useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa</option>
               </select>
               <div class="btns-wrapper">
-                <button class="submit-btn">Save</button>
-                <button class="cancel-btn">Cancel</button>
+                <button class="submit-btn" id="saveSettingsBtn">Save</button>
+                <button class="cancel-btn" id="cancelChangesBtn">Cancel</button>
               </div>
             </form>
           </div> <!-- /.settings -->

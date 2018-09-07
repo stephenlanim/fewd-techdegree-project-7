@@ -8,7 +8,7 @@ This project involved:
 - data visualization via Chart.js plugin,
 - object property configuration,
 - on/off toggle switch plugin from Proto.io,
-- local storage,
+- using local storage to save user input,
 - modular coding practices,
 - Sass CSS preprocessor,
 - refactoring code for efficiency and readability
