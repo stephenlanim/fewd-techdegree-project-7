@@ -14,7 +14,7 @@ Chart.defaults.global.maintainAspectRatio = false;
 // Hourly Traffic Line Graph
 var $hourlyTrafficCanvas = $('canvas#hourlyTrafficLineGraph');
 // Control chart display dimensions
-$hourlyTrafficCanvas.parent().css({'width': '80vw','height': '40vh'});
+$hourlyTrafficCanvas.parent().css({'width': '80%','height': '40vh'});
 
 var hourlyTrafficLineChart = new Chart($hourlyTrafficCanvas, {
    type: 'line',
@@ -50,7 +50,7 @@ var hourlyTrafficLineChart = new Chart($hourlyTrafficCanvas, {
 // Daily Traffic Line Graph
 var $dailyTrafficCanvas = $('canvas#dailyTrafficLineGraph');
 // Control chart display dimensions
-$dailyTrafficCanvas.parent().css({'width': '80vw','height': '40vh'});
+$dailyTrafficCanvas.parent().css({'width': '80%','height': '40vh'});
 
 var dailyTrafficLineChart = new Chart($dailyTrafficCanvas, {
    type: 'line',
@@ -87,7 +87,7 @@ var dailyTrafficLineChart = new Chart($dailyTrafficCanvas, {
 // Weekly Traffic Line Graph
 var $weeklyTrafficCanvas = $('canvas#weeklyTrafficLineGraph');
 // Control chart display dimensions
-$weeklyTrafficCanvas.parent().css({'width': '80vw','height': '40vh'});
+$weeklyTrafficCanvas.parent().css({'width': '80%','height': '40vh'});
 
 var weeklyTrafficLineChart = new Chart($weeklyTrafficCanvas, {
    type: 'line',
@@ -123,7 +123,7 @@ var weeklyTrafficLineChart = new Chart($weeklyTrafficCanvas, {
 // Monthly Traffic Line Graph
 var $monthlyTrafficCanvas = $('canvas#monthlyTrafficLineGraph');
 // Control chart display dimensions
-$monthlyTrafficCanvas.parent().css({'width': '80vw','height': '40vh'});
+$monthlyTrafficCanvas.parent().css({'width': '80%','height': '40vh'});
 
 var monthlyTrafficLineChart = new Chart($monthlyTrafficCanvas, {
    type: 'line',

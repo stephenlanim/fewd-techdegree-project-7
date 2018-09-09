@@ -56,7 +56,19 @@ form textarea {
   display: flex;
   align-items: center;
   margin: 3.23em 0;
-  width: 60%;
+  width: 80%;
+
+  @include mq('sm'){
+    width: 70%;
+  }
+
+  @include mq('med'){
+    width: 80%;
+  }
+
+  @include mq('lg'){
+    width: 60%;
+  }
 }
 
 .onoffswitch {

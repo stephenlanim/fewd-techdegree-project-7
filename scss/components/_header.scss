@@ -11,17 +11,19 @@
   @include flexbox($dir:row);
   align-items: center;
   overflow: visible;
+
 }
 
 .app-name {
   @include flexbox($dir:row);
   align-items: center;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 1em;
-  @include mq('xs') {
-    font-size: 1.5em;
-    margin-right: 0;
+  margin-right: 0;
+
+  @include mq('sm') {
+    font-size: 2em;
   }
 }
 
@@ -29,12 +31,12 @@
   @include flexbox($dir:row);
   align-items: center;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 1em;
   margin-left: auto;
 
-  @include mq('xs') {
-    font-size: 1.5em;
+  @include mq('sm') {
+    font-size: 2em;
   }
 }
 
@@ -75,8 +77,8 @@ ul#notifList {
   @include shadow;
   display: none;
   position: absolute;
-  top: 25px;
-  right: 0;
+  top: 30px;
+  right: -100px;
 
   width: 300px;
   height: auto;
@@ -86,9 +88,9 @@ ul#notifList {
     display: block;
   }
 
-  @include mq('xs') {
-    top: 30px;
-    right: -100px;
+  @include mq('sm') {
+    top: 25px;
+    right: 0;
   }
 
   & li {

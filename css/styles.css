@@ -319,18 +319,22 @@ p {
    ====================================== */
 .grid {
   display: grid;
-  grid-template-columns: 108px 1fr;
-  grid-template-areas: "header header" "nav main"; }
-  @media (max-width: 599px) {
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "nav" "main"; }
+  @media (min-width: 600px) {
     .grid {
-      grid-template-columns: 1fr;
-      grid-template-areas: "header" "nav" "main"; } }
+      grid-template-columns: 108px 1fr;
+      grid-template-areas: "header header" "nav main"; } }
 
 .dashboard {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100px 1fr;
-  grid-template-areas: "topper topper" "alert alert" "widgets widgets"; }
+  grid-template-columns: 100%;
+  grid-template-rows: 100px auto 1fr;
+  grid-template-areas: "topper" "alert" "widgets"; }
+  @media (min-width: 600px) {
+    .dashboard {
+      grid-template-columns: 50% 50%;
+      grid-template-areas: "topper topper" "alert alert" "widgets widgets"; } }
 
 .header {
   grid-area: header; }
@@ -345,13 +349,12 @@ main {
   grid-area: topper;
   display: grid;
   grid-template-areas: "db-heading search";
-  grid-template-rows: 100px; }
-  @media (max-width: 599px) {
-    .topper {
-      grid-template-columns: 40% 60%; } }
+  grid-template-columns: 40% 60%; }
   @media (min-width: 600px) {
     .topper {
-      grid-template-columns: 40% 60%; } }
+      grid-template-areas: "db-heading search";
+      grid-template-columns: 40% 60%;
+      grid-template-rows: 100px; } }
   @media (min-width: 900px) {
     .topper {
       grid-template-columns: 20% 80%; } }
@@ -378,13 +381,8 @@ main {
   font-size: 1.25em;
   margin-left: auto;
   margin-right: 1em;
-  padding: 0.5em; }
-  @media (max-width: 599px) {
-    #search {
-      width: 90%; } }
-  @media (min-width: 600px) {
-    #search {
-      width: 90%; } }
+  padding: 0.5em;
+  width: 90%; }
   @media (min-width: 900px) {
     #search {
       width: 40%; } }
@@ -402,18 +400,13 @@ main {
 .widgets {
   grid-area: widgets;
   display: grid;
-  grid-template-rows: auto auto auto auto auto; }
-  @media (max-width: 599px) {
-    .widgets {
-      grid-template-columns: 1fr;
-      grid-template-areas: "traffic" "daily-traffic" "mobile-users" "social-stats" "new-members" "recent-activity" "message-user" "settings"; } }
-  @media (min-width: 600px) {
-    .widgets {
-      grid-template-columns: 1fr;
-      grid-template-areas: "traffic" "daily-traffic" "mobile-users" "social-stats" "new-members" "recent-activity" "message-user" "settings"; } }
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+  grid-template-areas: "traffic" "daily-traffic" "mobile-users" "social-stats" "new-members" "recent-activity" "message-user" "settings"; }
   @media (min-width: 900px) {
     .widgets {
       grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto auto auto auto;
       grid-template-areas: "traffic traffic" "daily-traffic mobile-users" "social-stats social-stats" "new-members recent-activity" "message-user settings"; } }
 
 .traffic {
@@ -459,24 +452,24 @@ main {
   flex-direction: row;
   align-items: center;
   color: #fff;
-  font-size: 2em;
-  margin: 1em; }
-  @media (max-width: 599px) {
+  font-size: 1.5em;
+  margin: 1em;
+  margin-right: 0; }
+  @media (min-width: 600px) {
     .app-name {
-      font-size: 1.5em;
-      margin-right: 0; } }
+      font-size: 2em; } }
 
 .app-login {
   display: flex;
   flex-direction: row;
   align-items: center;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 1em;
   margin-left: auto; }
-  @media (max-width: 599px) {
+  @media (min-width: 600px) {
     .app-login {
-      font-size: 1.5em; } }
+      font-size: 2em; } }
 
 .notifications {
   margin-right: 1em;
@@ -506,17 +499,17 @@ ul#notifList {
   box-shadow: 2px 2px 10px 0px rgba(46, 61, 73, 0.2), -2px 0px 10px 0px rgba(46, 61, 73, 0.2);
   display: none;
   position: absolute;
-  top: 25px;
-  right: 0;
+  top: 30px;
+  right: -100px;
   width: 300px;
   height: auto;
   overflow: auto; }
   ul#notifList:hover {
     display: block; }
-  @media (max-width: 599px) {
+  @media (min-width: 600px) {
     ul#notifList {
-      top: 30px;
-      right: -100px; } }
+      top: 25px;
+      right: 0; } }
   ul#notifList li {
     background-color: #fbfbfb;
     border-bottom: 2px solid #c8c8c8;
@@ -553,39 +546,39 @@ ul#notifList {
 
 .nav {
   background-color: #4d4c72;
-  width: fit-content;
-  width: -moz-fit-content;
-  height: auto;
-  z-index: 100;
   display: flex;
-  flex-direction: column; }
-  @media (max-width: 599px) {
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: fit-content;
+  height: -moz-fit-content;
+  width: 100%;
+  z-index: 100; }
+  @media (min-width: 600px) {
     .nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      height: fit-content;
-      height: -moz-fit-content;
-      width: 100%; } }
+      flex-direction: column;
+      justify-content: flex-start;
+      width: fit-content;
+      width: -moz-fit-content;
+      height: auto; } }
 
 .nav-item {
   height: fit-content;
   height: -moz-fit-content;
-  padding: 1.8em;
+  padding: 0.5em;
   transition-property: all;
   transition-duration: 0.1s;
   transition-timing-function: ease-in; }
-  @media (max-width: 599px) {
+  @media (min-width: 600px) {
     .nav-item {
-      padding: 0.5em; } }
+      padding: 1.8em; } }
   .nav-item.active {
-    border-left: 3px solid #85db80; }
+    border-bottom: 3px solid #85db80; }
+    @media (min-width: 600px) {
+      .nav-item.active {
+        border-bottom: none;
+        border-left: 3px solid #85db80; } }
     .nav-item.active .nav-icon {
       fill: #fff; }
-    @media (max-width: 599px) {
-      .nav-item.active {
-        border-left: none;
-        border-bottom: 3px solid #85db80; } }
   .nav-item:hover .nav-icon,
   .nav-item:focus .nav-icon,
   .nav-item:active .nav-icon {
@@ -737,7 +730,16 @@ form textarea {
   display: flex;
   align-items: center;
   margin: 3.23em 0;
-  width: 60%; }
+  width: 80%; }
+  @media (min-width: 600px) {
+    .switch-n-label {
+      width: 70%; } }
+  @media (min-width: 900px) {
+    .switch-n-label {
+      width: 80%; } }
+  @media (min-width: 1200px) {
+    .switch-n-label {
+      width: 60%; } }
 
 .onoffswitch {
   display: inline-block;
@@ -817,30 +819,32 @@ h2 {
 
 .widgets > div {
   padding: 2em; }
-  @media (max-width: 599px) {
-    .widgets > div {
-      border-right: none; } }
 
 .switch-field {
-  border: none;
-  width: 80vw; }
+  border: none; }
+  @media (min-width: 600px) {
+    .switch-field {
+      width: 70vw; } }
+  @media (min-width: 900px) {
+    .switch-field {
+      width: 75vw; } }
+  @media (min-width: 1200px) {
+    .switch-field {
+      width: 80vw; } }
 
-@media (max-width: 599px) {
-  .switch-toggle {
-    margin: 1em auto;
-    width: 60%; } }
-
-@media (min-width: 600px) {
-  .switch-toggle {
-    margin-left: auto;
-    margin-right: 1em;
-    width: 50%; } }
-
-@media (min-width: 900px) {
-  .switch-toggle {
-    margin-left: auto;
-    margin-right: 0;
-    width: 30%; } }
+.switch-toggle {
+  margin: 1em auto;
+  width: 100%; }
+  @media (min-width: 600px) {
+    .switch-toggle {
+      margin-left: auto;
+      margin-right: 1em;
+      width: 70%; } }
+  @media (min-width: 900px) {
+    .switch-toggle {
+      margin-left: auto;
+      margin-right: 0;
+      width: 40%; } }
 
 .chart-container {
   position: relative;
@@ -850,7 +854,12 @@ h2 {
 .new-members,
 .message-user {
   border-top: 2px solid #c8c8c8;
-  border-right: 2px solid #c8c8c8; }
+  border-right: none; }
+  @media (min-width: 900px) {
+    .daily-traffic,
+    .new-members,
+    .message-user {
+      border-right: 2px solid #c8c8c8; } }
 
 .mobile-users,
 .recent-activity,
@@ -882,12 +891,10 @@ h2 {
   border-radius: 6px;
   padding: 1em;
   margin: 1em;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
-  @media (max-width: 599px) {
-    .social-widget {
-      width: 90%; } }
   @media (min-width: 600px) {
     .social-widget {
       width: 90%; } }

@@ -6,6 +6,7 @@
 @mixin mq($break) {
   // Variables for grabbing $breakpoints Sass map values
   $value: map-get($breakpoints, $break);
+  $xs: map-get($breakpoints, "xs");
   $sm: map-get($breakpoints, "sm");
 
   // Check for errors
@@ -15,10 +16,11 @@
   }
 
   // Use "max-width" if value passed to $break is less than "sm" (i.e. smaller than tablet portrait)
-  @else if $value < $sm {
-    @media (max-width: $value) {
-      @content;
-    }
+  @else if $value == $xs {
+    @error "You should no longer use the '#{$break}' breakpoint and should instead use a mobile-first approach. Default styles should be for smartphone screen size, and any media queries should be for 'sm' (600px) and up using min-width.";
+    // @media (max-width: $value) {
+    //   @content;
+    // }
   }
 
   // Use "min-width" if value passed to $break is anything larger than "xs" (i.e. smartphone width)

@@ -7,17 +7,19 @@
 
 .nav {
   background-color: $color-accent;
-  width: fit-content;
-  width: -moz-fit-content;
-  height: auto;
-  z-index: 100;
-  @include flexbox($dir:column);
+  @include flexbox($dir:row, $just:space-evenly);
+  height: fit-content;
+  height: -moz-fit-content;
+  width: 100%;
 
-  @include mq("xs") {
-    @include flexbox($dir:row, $just:space-evenly);
-    height: fit-content;
-    height: -moz-fit-content;
-    width: 100%;
+  z-index: 100;
+
+  @include mq('sm'){
+    flex-direction: column;
+    justify-content: flex-start;
+    width: fit-content;
+    width: -moz-fit-content;
+    height: auto;
   }
 
 }
@@ -25,22 +27,26 @@
 .nav-item {
   height: fit-content;
   height: -moz-fit-content;
-  padding: 1.8em;
+  padding: 0.5em;
 
   @include transition($dur:0.1s);
 
-  @include mq("xs") {
-    padding: 0.5em;
+  @include mq('sm'){
+    padding: 1.8em;
   }
+
   &.active {
-    border-left: 3px solid $link-color-active;
+    border-bottom: 3px solid $link-color-active;
+    
+    @include mq("sm") {
+      border-bottom: none;
+      border-left: 3px solid $link-color-active;
+    }
+
     & .nav-icon {
       fill: #fff;
     }
-    @include mq("xs") {
-      border-left: none;
-      border-bottom: 3px solid $link-color-active;
-    }
+
   }
 
   &:hover .nav-icon,

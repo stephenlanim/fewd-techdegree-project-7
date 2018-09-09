@@ -12,6 +12,7 @@ This project involved:
 - reverting user saved changes,
 - modular coding practices,
 - Sass CSS preprocessor,
+- mobile-first approach to media queries,
 - refactoring code for efficiency and readability, and
 - plenty of debugging.
 
