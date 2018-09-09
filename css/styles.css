@@ -349,12 +349,8 @@ main {
   grid-area: topper;
   display: grid;
   grid-template-areas: "db-heading search";
-  grid-template-columns: 40% 60%; }
-  @media (min-width: 600px) {
-    .topper {
-      grid-template-areas: "db-heading search";
-      grid-template-columns: 40% 60%;
-      grid-template-rows: 100px; } }
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 100px; }
   @media (min-width: 900px) {
     .topper {
       grid-template-columns: 20% 80%; } }
@@ -365,7 +361,11 @@ main {
   .db-heading h1 {
     margin-left: auto;
     margin-right: auto;
-    text-align: center; }
+    text-align: center;
+    font-size: 1.5em; }
+    @media (min-width: 600px) {
+      .db-heading h1 {
+        font-size: 2em; } }
 
 .search {
   background-color: #fbfbfb;
@@ -453,11 +453,12 @@ main {
   align-items: center;
   color: #fff;
   font-size: 1.5em;
-  margin: 1em;
+  margin: 0.5em;
   margin-right: 0; }
   @media (min-width: 600px) {
     .app-name {
-      font-size: 2em; } }
+      font-size: 2em;
+      margin: 1em; } }
 
 .app-login {
   display: flex;
@@ -472,8 +473,11 @@ main {
       font-size: 2em; } }
 
 .notifications {
-  margin-right: 1em;
+  margin-right: 0.5em;
   position: relative; }
+  @media (min-width: 600px) {
+    .notifications {
+      margin-right: 1em; } }
 
 .bell {
   cursor: pointer;
@@ -528,7 +532,10 @@ ul#notifList {
 
 .avatar-div {
   border-left: 2px solid #4d4c72;
-  padding-left: 1em; }
+  padding-left: 0.5em; }
+  @media (min-width: 600px) {
+    .avatar-div {
+      padding-left: 1em; } }
 
 .avatar {
   border-radius: 50%;
@@ -930,20 +937,35 @@ h2 {
 
 .member {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
   border-bottom: 1px solid #c8c8c8;
   padding: 1em; }
+  @media (min-width: 1200px) {
+    .member {
+      align-items: flex-start;
+      text-align: left;
+      flex-direction: row; }
+      .member :last-child {
+        margin-left: auto; } }
   .member:last-child {
     border-bottom: none; }
   .member img {
     border-radius: 50%;
-    margin-right: 1em;
-    width: 10%;
-    height: 50%; }
-  .member .member-info,
+    width: 30%; }
+    @media (min-width: 1200px) {
+      .member img {
+        margin-right: 1em;
+        width: 10%;
+        height: 50%; } }
+  @media (min-width: 1200px) {
+    .member .member-info,
+    .member .activity-info {
+      width: 70%; } }
   .member .activity-info {
-    width: 70%; }
+    margin-bottom: 0; }
   .member p {
     margin-top: 0.5em; }
   .member a {
@@ -951,18 +973,13 @@ h2 {
     color: #7477bf; }
     .member a:hover, .member afocus {
       color: #81c98f; }
+  .member .signup-date,
+  .member .activity-time {
+    color: #74b1bf; }
   .member .angle-bracket {
     font-size: 2.5em;
     font-weight: bold;
     margin-top: 0.4em; }
-  .member :last-child {
-    margin-left: auto; }
-  @media (min-width: 900px) {
-    .new-members .member {
-      flex-direction: column; } }
-  @media (min-width: 1200px) {
-    .new-members .member {
-      flex-direction: row; } }
 
 /* ======================================
     Animations

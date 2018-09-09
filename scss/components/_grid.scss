@@ -54,15 +54,8 @@ main {
   display: grid;
   grid-template-areas:
   "db-heading search";
-  // grid-template-columns: 100%;
   grid-template-columns: 40% 60%;
-
-  @include mq("sm") {
-    grid-template-areas:
-      "db-heading search";
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 100px;
-  }
+  grid-template-rows: 100px;
 
   @include mq("med") {
     grid-template-columns: 20% 80%;
@@ -76,6 +69,10 @@ main {
 
   & h1 {
     @include center;
+    font-size: 1.5em;
+    @include mq('sm'){
+      font-size: 2em;
+    }
   }
 
 }

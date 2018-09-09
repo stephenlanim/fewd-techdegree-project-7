@@ -136,9 +136,21 @@ h2 {
 }
 
 .member {
-  @include flexbox($dir: row, $just: space-between);
+  @include flexbox($dir: column, $just: space-between);
+  align-items: center;
+  text-align: center;
   border-bottom: 1px solid $border-color;
   padding: 1em;
+
+  @include mq('lg') {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+
+    & :last-child {
+      margin-left: auto;
+    }
+  }
 
   &:last-child {
     border-bottom: none;
@@ -146,14 +158,24 @@ h2 {
 
   & img {
     border-radius: 50%;
-    margin-right: 1em;
-    width: 10%;
-    height: 50%;
+    width: 30%;
+
+    @include mq('lg'){
+      margin-right: 1em;
+      width: 10%;
+      height: 50%;
+    }
   }
 
   & .member-info,
   & .activity-info {
-    width: 70%;
+    @include mq('lg'){
+      width: 70%;
+    }
+  }
+
+  & .activity-info {
+    margin-bottom: 0;
   }
 
   & p {
@@ -170,22 +192,15 @@ h2 {
     }
   }
 
+  & .signup-date,
+  & .activity-time {
+    color: $color-tertiary;
+  }
+
   & .angle-bracket {
     font-size: 2.5em;
     font-weight: bold;
     margin-top: 0.4em;
   }
 
-  & :last-child {
-    margin-left: auto;
-  }
-
-  .new-members & {
-    @include mq('med') {
-      flex-direction: column;
-    }
-    @include mq('lg') {
-      flex-direction: row;
-    }
-  }
 }
