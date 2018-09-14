@@ -609,6 +609,7 @@ ul#notifList {
 .alert {
   color: white;
   border-radius: 5px;
+  line-height: 1.4;
   padding: 0.5em;
   margin: 2em auto;
   width: calc(100% - 100px);
@@ -623,6 +624,7 @@ ul#notifList {
 .confirmation {
   color: white;
   border-radius: 5px;
+  line-height: 1.4;
   padding: 0.5em;
   margin: 2em auto;
   width: calc(100% - 100px);
@@ -637,6 +639,7 @@ ul#notifList {
 .error {
   color: white;
   border-radius: 5px;
+  line-height: 1.4;
   padding: 0.5em;
   margin: 2em auto;
   width: calc(100% - 100px);
@@ -651,6 +654,7 @@ ul#notifList {
 .warning {
   color: white;
   border-radius: 5px;
+  line-height: 1.4;
   padding: 0.5em;
   margin: 2em auto;
   width: calc(100% - 100px);
